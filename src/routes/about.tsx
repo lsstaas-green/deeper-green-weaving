@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import aboutImg from "@/assets/about-portrait.jpg";
+import storyMountain from "@/assets/story/leonie-mountain.jpg";
+import storySpeaking from "@/assets/story/leonie-speaking.jpg";
+import storyTree from "@/assets/story/leonie-tree.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -121,19 +123,38 @@ function AboutPage() {
       <section id="my-story" className="mt-20 scroll-mt-28">
         <h2 className="font-serif text-3xl md:text-4xl text-primary">My Story</h2>
         <div className="mt-10 grid gap-10 md:grid-cols-[2fr_3fr]">
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="overflow-hidden rounded-3xl">
               <img
-                src={aboutImg}
-                alt="Portrait of Leonie standing in a meadow at dawn"
+                src={storyMountain}
+                alt="Leonie in the mountains, hand on heart"
                 width={1280}
                 height={1600}
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex aspect-video items-center justify-center rounded-2xl border border-dashed border-border bg-secondary/50 text-sm text-muted-foreground">
-              [Video placeholder]
+            <div className="grid grid-cols-2 gap-4">
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={storySpeaking}
+                  alt="Leonie speaking at a podium"
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  className="aspect-square h-full w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={storyTree}
+                  alt="Leonie embracing an old tree in the forest"
+                  width={800}
+                  height={1000}
+                  loading="lazy"
+                  className="aspect-square h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
