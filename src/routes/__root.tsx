@@ -118,7 +118,6 @@ function SiteHeader() {
       <div className="container-narrow flex flex-col gap-3 py-4 sm:h-20 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:py-0">
         <Link to="/" className="flex flex-col leading-tight">
           <span className="font-serif text-xl text-primary">Leonie Staas</span>
-          <span className="eyebrow mt-0.5">A Deeper Green</span>
         </Link>
 
         <nav className="-mx-1 flex flex-wrap items-center gap-x-5 gap-y-2 sm:gap-x-7 md:gap-x-9">
@@ -169,10 +168,23 @@ function SiteFooter() {
       <div className="container-narrow grid gap-10 py-16 md:grid-cols-3">
         <div>
           <p className="font-serif text-xl text-primary">Leonie Staas</p>
-          <p className="eyebrow mt-1">A Deeper Green</p>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             At the intersection of personal and planetary healing.
           </p>
+          <a
+            href="https://instagram.com/a_deeper_green"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-sm text-primary underline-offset-4 hover:underline"
+            aria-label="Instagram @a_deeper_green"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            @a_deeper_green
+          </a>
         </div>
         <div>
           <p className="eyebrow mb-4">Explore</p>
@@ -193,10 +205,10 @@ function SiteFooter() {
             and media inquiries.
           </p>
           <a
-            href="mailto:hello@leoniestaas.com"
+            href="mailto:l.s.staas@gmail.com"
             className="mt-4 inline-block text-sm text-primary underline-offset-4 hover:underline"
           >
-            hello@leoniestaas.com
+            l.s.staas@gmail.com
           </a>
         </div>
       </div>

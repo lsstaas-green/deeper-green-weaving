@@ -104,7 +104,7 @@ function AboutPage() {
       <nav className="mt-10 flex flex-wrap gap-2 text-sm">
         {[
           ["my-story", "My Story"],
-          ["your-story", "Your Story"],
+          ["testimonials", "Testimonials"],
           ["faq", "FAQ"],
         ].map(([id, label]) => (
           <a
@@ -215,9 +215,9 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* YOUR STORY */}
-      <section id="your-story" className="mt-28 scroll-mt-28">
-        <h2 className="font-serif text-3xl md:text-4xl text-primary">Your Story</h2>
+      {/* TESTIMONIALS */}
+      <section id="testimonials" className="mt-28 scroll-mt-28">
+        <h2 className="font-serif text-3xl md:text-4xl text-primary">Testimonials</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
           Voices of people who have walked some of this path with me. (Testimonials
           gathered over time — placeholders below.)
