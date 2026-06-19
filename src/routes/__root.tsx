@@ -199,10 +199,18 @@ function SiteFooter() {
           </ul>
         </div>
         <div>
-          <p className="eyebrow mb-4">Stay in touch</p>
+          <p className="eyebrow mb-4">Let's connect</p>
           <p className="text-sm text-muted-foreground">
-            Subscribe to <em>A Deeper Green</em> on Substack, or write directly for speaking
-            and media inquiries.
+            Subscribe to{" "}
+            <a
+              href="https://substack.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="italic text-primary underline-offset-4 hover:underline"
+            >
+              A Deeper Green
+            </a>{" "}
+            on Substack, or write directly for speaking and media inquiries.
           </p>
           <a
             href="mailto:l.s.staas@gmail.com"
