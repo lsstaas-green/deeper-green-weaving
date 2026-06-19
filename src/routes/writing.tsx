@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import article1 from "@/assets/article-1.jpg";
+import article2 from "@/assets/article-2.jpg";
+import article3 from "@/assets/article-3.jpg";
 
 export const Route = createFileRoute("/writing")({
   head: () => ({
@@ -19,6 +22,7 @@ const SUBSTACK = [
     excerpt:
       "We keep waiting for the breakthrough that will rescue us. But the deepest technology is the one we live inside.",
     href: "#",
+    img: article1,
   },
   {
     title: "Measuring What Matters",
@@ -26,6 +30,7 @@ const SUBSTACK = [
     excerpt:
       "When the indicators we trusted stop pointing at anything real, what do we steer by?",
     href: "#",
+    img: article2,
   },
   {
     title: "Can I Still Have Children Today?",
@@ -33,10 +38,11 @@ const SUBSTACK = [
     excerpt:
       "A question I didn't choose, asked from inside a life that still wants to be lived.",
     href: "#",
+    img: article3,
   },
 ];
 
-const EXTERNAL = [
+const MEDIA = [
   {
     title: "[External essay title — placeholder]",
     outlet: "OPEN Foundation",
@@ -49,27 +55,60 @@ const EXTERNAL = [
     excerpt: "Short overview of the piece. To be filled in.",
     href: "#",
   },
+  {
+    title: "[Podcast or interview — placeholder]",
+    outlet: "DoubleBlind Magazine",
+    excerpt: "Short overview of the conversation. To be filled in.",
+    href: "#",
+  },
+  {
+    title: "[Podcast or interview — placeholder]",
+    outlet: "Entheogenic Renaissance",
+    excerpt: "Short overview of the conversation. To be filled in.",
+    href: "#",
+  },
+  {
+    title: "[Panel or talk — placeholder]",
+    outlet: "[Outlet]",
+    excerpt: "Short overview of the appearance. To be filled in.",
+    href: "#",
+  },
 ];
+
+function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 function SubscribeBlock() {
   return (
     <div className="rounded-3xl border border-border bg-secondary/50 p-8 md:p-12">
       <p className="eyebrow">Subscribe</p>
-      <h3 className="mt-3 font-serif text-2xl md:text-3xl text-primary">
-        A Deeper Green
-      </h3>
+      <h3 className="mt-3 font-serif text-2xl md:text-3xl text-primary">A Deeper Green</h3>
       <p className="mt-2 max-w-xl text-sm text-muted-foreground">
-        New essays land in your inbox every few weeks. No noise, no marketing — just
-        the work as it unfolds.
+        New essays land in your inbox every few weeks. No noise, no marketing — just the
+        work as it unfolds.
       </p>
-      <a
-        href="https://substack.com/"
-        target="_blank"
-        rel="noreferrer"
-        className="btn-primary mt-6"
-      >
-        Subscribe on Substack
-      </a>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <a href="https://substack.com/" target="_blank" rel="noreferrer" className="btn-primary">
+          Subscribe on Substack
+        </a>
+        <a
+          href="https://instagram.com/a_deeper_green"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram @a_deeper_green"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-primary hover:border-primary"
+        >
+          <InstagramIcon />
+          @a_deeper_green
+        </a>
+      </div>
     </div>
   );
 }
@@ -79,12 +118,10 @@ function WritingPage() {
     <div className="container-narrow py-20 md:py-28">
       <header className="max-w-2xl">
         <p className="eyebrow">Writing</p>
-        <h1 className="mt-3 font-serif text-4xl md:text-5xl text-primary">
-          A Deeper Green
-        </h1>
+        <h1 className="mt-3 font-serif text-4xl md:text-5xl text-primary">A Deeper Green</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Essays on the metacrisis, the inner work of our time, and the practice of
-          coming back to life.
+          Essays on the metacrisis, the inner work of our time, and the practice of coming
+          back to life.
         </p>
       </header>
 
@@ -92,12 +129,15 @@ function WritingPage() {
         <h2 className="font-serif text-2xl text-primary">From Substack</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {SUBSTACK.map((a) => (
-            <a key={a.title} href={a.href} className="card-soft block">
-              <p className="eyebrow text-clay">Substack</p>
-              <h3 className="mt-3 font-serif text-xl leading-snug text-primary">{a.title}</h3>
-              <p className="mt-1 text-sm italic text-muted-foreground">{a.sub}</p>
-              <p className="mt-4 text-sm text-foreground/80">{a.excerpt}</p>
-              <span className="mt-5 inline-block text-sm text-accent">Read on Substack →</span>
+            <a key={a.title} href={a.href} className="card-soft block overflow-hidden p-0">
+              <img src={a.img} alt="" loading="lazy" width={800} height={600} className="aspect-[16/9] w-full object-cover" />
+              <div className="p-6">
+                <p className="eyebrow text-clay">Substack</p>
+                <h3 className="mt-3 font-serif text-xl leading-snug text-primary">{a.title}</h3>
+                <p className="mt-1 text-sm italic text-muted-foreground">{a.sub}</p>
+                <p className="mt-4 text-sm text-foreground/80">{a.excerpt}</p>
+                <span className="mt-5 inline-block text-sm text-accent">Read on Substack →</span>
+              </div>
             </a>
           ))}
         </div>
@@ -108,12 +148,12 @@ function WritingPage() {
       </div>
 
       <section className="mt-20">
-        <h2 className="font-serif text-2xl text-primary">Elsewhere</h2>
+        <h2 className="font-serif text-2xl text-primary">In the Media</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Pieces published with other outlets and communities.
+          Features, interviews, podcasts, and panels.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {EXTERNAL.map((a) => (
+          {MEDIA.map((a) => (
             <a key={a.title} href={a.href} className="card-soft block">
               <p className="eyebrow text-clay">{a.outlet}</p>
               <h3 className="mt-3 font-serif text-xl leading-snug text-primary">{a.title}</h3>
