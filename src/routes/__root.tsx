@@ -112,17 +112,16 @@ const NAV = [
 ] as const;
 
 function SiteHeader() {
-  const [open, setOpen] = useState(false);
   const [writingHover, setWritingHover] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
-      <div className="container-narrow flex h-20 items-center justify-between">
+      <div className="container-narrow flex flex-col gap-3 py-4 sm:h-20 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:py-0">
         <Link to="/" className="flex flex-col leading-tight">
           <span className="font-serif text-xl text-primary">Leonie Staas</span>
           <span className="eyebrow mt-0.5">A Deeper Green</span>
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="-mx-1 flex flex-wrap items-center gap-x-5 gap-y-2 sm:gap-x-7 md:gap-x-9">
           {NAV.map((item) => {
             const isWriting = item.to === "/writing";
             return (
@@ -140,7 +139,7 @@ function SiteHeader() {
                   {item.label}
                 </Link>
                 {isWriting && writingHover && (
-                  <div className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 rounded-xl border border-border bg-card p-4 shadow-xl">
+                  <div className="absolute left-0 top-full z-50 mt-3 w-72 rounded-xl border border-border bg-card p-4 shadow-xl sm:left-1/2 sm:-translate-x-1/2">
                     <p className="font-serif text-base text-primary">A Deeper Green</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Essays on climate, consciousness and reconnection.
@@ -159,32 +158,7 @@ function SiteHeader() {
             );
           })}
         </nav>
-
-        <button
-          aria-label="Toggle menu"
-          className="md:hidden rounded-full border border-border px-4 py-2 text-xs"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
       </div>
-
-      {open && (
-        <div className="md:hidden border-t border-border bg-background">
-          <div className="container-narrow flex flex-col gap-4 py-5">
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="text-base text-foreground/85"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </header>
   );
 }
