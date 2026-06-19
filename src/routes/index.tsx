@@ -57,7 +57,7 @@ const OFFERINGS = [
   { title: "Active Hope Workshop", blurb: "Group work in Joanna Macy's tradition — feel, reconnect, act.", hash: "#active-hope" },
   { title: "1:1 Coaching on Holistic Reconnection", blurb: "Personal accompaniment through climate grief and transition.", hash: "#coaching" },
   { title: "12-Month Cohort Programme", blurb: "Finding Yourself in Times of Crisis. (Working title — starts Nov 2026.)", hash: "#cohort" },
-  { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and facilitation where legal.", hash: "#psychedelic" },
+  { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and a path to legal psychedelic support.", hash: "#psychedelic" },
 ];
 
 const AFFILIATIONS = [
@@ -115,9 +115,10 @@ function Home() {
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
           height={1280}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/25 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/55 to-primary/85" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/65 via-black/35 to-transparent" />
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
           <p className="eyebrow text-cream/85">Leonie Staas</p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
@@ -150,9 +151,9 @@ function Home() {
       {/* Triangle of competencies */}
       <section className="container-narrow py-24 md:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow">Three threads, one weave</p>
-          <h2 className="mt-4 text-3xl md:text-4xl text-primary">
-            The work I bring lives at three intersections.
+          <p className="eyebrow">A holistic response to a systemic illness</p>
+          <h2 className="mt-4 font-serif text-3xl md:text-4xl text-primary">
+            My work lives at the intersection of three unique perspectives.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Climate. Inner landscape. Reconnection. Each on its own is not enough — together
@@ -160,47 +161,44 @@ function Home() {
           </p>
         </div>
 
-        {/* Triangle visualization */}
+        {/* Triangle visualization — apex on top, two base corners below */}
         <div className="relative mx-auto mt-20 max-w-5xl">
+          {/* connecting triangle lines (desktop only) */}
           <svg
             aria-hidden
-            className="pointer-events-none absolute inset-0 h-full w-full"
-            viewBox="0 0 1000 720"
-            preserveAspectRatio="none"
+            className="pointer-events-none absolute left-1/2 top-0 hidden h-[420px] w-[640px] -translate-x-1/2 text-primary/40 md:block"
+            viewBox="0 0 640 420"
           >
-            <defs>
-              <linearGradient id="lineGrad" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stopColor="currentColor" stopOpacity="0.55" />
-                <stop offset="100%" stopColor="currentColor" stopOpacity="0.25" />
-              </linearGradient>
-            </defs>
-            <g className="text-primary">
-              <path d="M 180 150 C 380 60, 620 60, 820 150" stroke="url(#lineGrad)" strokeWidth="1.5" fill="none" strokeDasharray="3 7" />
-              <path d="M 180 150 C 260 360, 380 540, 500 600" stroke="url(#lineGrad)" strokeWidth="1.5" fill="none" strokeDasharray="3 7" />
-              <path d="M 820 150 C 740 360, 620 540, 500 600" stroke="url(#lineGrad)" strokeWidth="1.5" fill="none" strokeDasharray="3 7" />
-            </g>
+            <polygon
+              points="320,40 60,380 580,380"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeDasharray="4 8"
+            />
           </svg>
 
-          <div className="relative grid gap-10 md:grid-cols-3 md:gap-6">
+          <div className="grid gap-14 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
             {COMPETENCIES.map((c, i) => (
               <article
                 key={c.eyebrow}
                 className={
-                  "relative text-center md:text-left " +
-                  (i === 2 ? "md:col-start-2 md:row-start-2 md:text-center" : "")
+                  "relative text-center " +
+                  (i === 0
+                    ? "md:col-span-2 md:mx-auto md:max-w-sm"
+                    : "md:max-w-sm " + (i === 1 ? "md:justify-self-start md:text-left" : "md:justify-self-end md:text-right"))
                 }
               >
-                {/* Node dot */}
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-primary/30 bg-cream shadow-sm md:mx-0">
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-cream shadow-sm md:mx-0" style={i === 0 ? { marginLeft: "auto", marginRight: "auto" } : i === 1 ? { marginLeft: 0 } : { marginLeft: "auto", marginRight: 0 }}>
                   <span className="h-3 w-3 rounded-full bg-primary" />
                 </div>
                 <p className="eyebrow">{c.eyebrow}</p>
                 <p className="mt-3 font-serif text-lg leading-snug text-primary">
                   "{c.quote}"
                 </p>
-                <ul className="mt-5 space-y-2 text-sm text-foreground/80">
+                <ul className={"mt-5 space-y-2 text-sm text-foreground/80 " + (i === 2 ? "md:[&_li]:flex-row-reverse" : "")}>
                   {c.points.map((p) => (
-                    <li key={p.text} className="flex items-start gap-2 md:items-baseline">
+                    <li key={p.text} className="flex items-start gap-2">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                       {p.href ? (
                         <a href={p.href} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
@@ -294,10 +292,10 @@ function Home() {
           <div>
             <p className="eyebrow">In the media</p>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl text-primary">
-              Conversations beyond this site.
+              In the media.
             </h2>
             <p className="mt-4 text-sm text-muted-foreground">
-              Features, podcasts, and panels where this work has appeared.
+              Features, podcasts, and panels where my work has appeared.
             </p>
             <a
               href="mailto:l.s.staas@gmail.com?subject=Media%20%26%20Speaking%20Inquiry"
