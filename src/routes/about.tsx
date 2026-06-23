@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       { title: "About — Leonie Staas" },
       {
         name: "description",
-        content: "Leonie's story, your story, and frequently asked questions.",
+        content: "Leonie's story and frequently asked questions.",
       },
       { property: "og:title", content: "About — Leonie Staas" },
       {
@@ -21,17 +21,6 @@ export const Route = createFileRoute("/about")({
   }),
   component: AboutPage,
 });
-
-const ACKNOWLEDGEMENTS = [
-  { name: "Ram Dass", note: "On presence, love, and the witness." },
-  { name: "Alan Watts", note: "On the wisdom of not-knowing." },
-  { name: "Joanna Macy", note: "On the Work That Reconnects." },
-  { name: "Christiana Figueres", note: "On stubborn optimism in climate work." },
-  { name: "Rosalind Watts", note: "On psychedelic integration and the circle." },
-  { name: "Mark Ovland", note: "On embodied practice and the inner path." },
-  { name: "Andrew Boyd", note: "On meeting the truth of our situation." },
-  { name: "Marissa Feinberg", note: "On regenerative leadership." },
-];
 
 const FAQ_SECTIONS = [
   {
@@ -75,24 +64,6 @@ const FAQ_SECTIONS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: "[Name — placeholder]",
-    role: "[Role / context]",
-    quote: "[Testimonial quote will live here. Leonie will gather these over time.]",
-  },
-  {
-    name: "[Name — placeholder]",
-    role: "[Role / context]",
-    quote: "[Testimonial quote will live here.]",
-  },
-  {
-    name: "[Name — placeholder]",
-    role: "[Role / context]",
-    quote: "[Testimonial quote will live here.]",
-  },
-];
-
 function AboutPage() {
   return (
     <div className="container-narrow py-20 md:py-28">
@@ -106,7 +77,6 @@ function AboutPage() {
       <nav className="mt-10 flex flex-wrap gap-2 text-sm">
         {[
           ["my-story", "My Story"],
-          ["testimonials", "Testimonials"],
           ["faq", "FAQ"],
         ].map(([id, label]) => (
           <a
@@ -185,7 +155,7 @@ function AboutPage() {
               reconnection: to ourselves, to each other, and most of all to nature.
             </p>
             <p>
-              What reconnected her were diverse practices — from rave to meditation —
+              What reconnected her were diverse practices, from meditation to singing,
               diverse wisdom traditions, from Buddhism to Taoist thought, and diverse
               philosophies, from deep ecology to systems theory. Most of all, it was the
               lived experience of connection through the intentional use of psychedelics.
@@ -193,67 +163,19 @@ function AboutPage() {
             <p>
               Leonie is now a certified psychedelic facilitator through the Synthesis
               Institute, combining her facilitation with Joanna Macy's Work That
-              Reconnects and Eco-Dharma. She is part of the team at PsyGaia, and works
-              with the European Citizens' Movement PsychedeliCare, advocating for
-              climate anxiety and ecological grief to be recognized as important
-              therapeutic use cases for psychedelic-assisted therapy, as well as with
-              PSYCA (Psychedelics for Climate Action).
+              Reconnects and practices inspired by the Eco-Dharma. She is part of the
+              team at PsyGaia, and works with the European Citizens' Movement
+              PsychedeliCare, advocating for climate anxiety and ecological grief to be
+              recognized as important therapeutic use cases for psychedelic-assisted
+              therapy, as well as with PSYCA (Psychedelics for Climate Action).
             </p>
 
             <blockquote className="mt-10 border-l-2 border-accent pl-6 font-serif text-2xl italic leading-snug text-primary">
-              "If we can turn a mindset of growth into one of balance, if we can turn
-              fear into connection, we can unlock a nascent environmental movement, and
-              transform the biggest challenge of our species into a quantum leap in
-              consciousness."
+              "I am no longer crippled by burnout and climate despair, but charged with
+              joy and hopeful action, grateful to be alive, and at home in this world.
+              This is what I long to share."
             </blockquote>
           </div>
-        </div>
-
-        {/* Acknowledgements */}
-        <div className="mt-20">
-          <h3 className="font-serif text-2xl text-primary">Acknowledgements</h3>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            The teachers and thinkers whose work has shaped this one.
-          </p>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
-            {ACKNOWLEDGEMENTS.map((p) => (
-              <li key={p.name} className="card-soft">
-                <p className="font-serif text-lg text-primary">{p.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{p.note}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Note on AI */}
-        <div className="mt-16 rounded-2xl border border-border bg-secondary/40 p-8">
-          <p className="eyebrow">A note on the use of AI</p>
-          <p className="mt-3 text-foreground/85">
-            AI is not used for original writing on this site — only for editing
-            purposes such as shortening or suggesting summaries. The voice you read
-            here is Leonie's own.
-          </p>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section id="testimonials" className="mt-28 scroll-mt-28">
-        <h2 className="font-serif text-3xl md:text-4xl text-primary">Testimonials</h2>
-        <p className="mt-4 max-w-2xl text-muted-foreground">
-          Voices of people who have walked some of this path with me. (Testimonials
-          gathered over time — placeholders below.)
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <figure key={i} className="card-soft">
-              <div className="h-12 w-12 rounded-full bg-secondary" aria-hidden />
-              <blockquote className="mt-5 text-sm text-foreground/85">"{t.quote}"</blockquote>
-              <figcaption className="mt-5">
-                <p className="text-sm font-medium text-primary">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </figcaption>
-            </figure>
-          ))}
         </div>
       </section>
 
