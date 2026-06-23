@@ -4,10 +4,10 @@ import { useMemo, useState, type ReactNode } from "react";
 export const Route = createFileRoute("/key-concepts")({
   head: () => ({
     meta: [
-      { title: "Key Concepts — Leonie Staas" },
-      { name: "description", content: "A glossary of the terms at the heart of this work." },
-      { property: "og:title", content: "Key Concepts — Leonie Staas" },
-      { property: "og:description", content: "A glossary of the terms at the heart of this work." },
+      { title: "My Framework — Leonie Staas" },
+      { name: "description", content: "Ideas that shaped my approach to personal and planetary healing." },
+      { property: "og:title", content: "My Framework — Leonie Staas" },
+      { property: "og:description", content: "Ideas that shaped my approach to personal and planetary healing." },
     ],
   }),
   component: KeyConceptsPage,
@@ -233,6 +233,24 @@ const SECTIONS: Section[] = [
           "Ways of living, working, and organising that restore rather than deplete human and ecological systems. Regenerative culture seeks not merely to sustain what exists, but to create conditions in which life can thrive. It asks how we might contribute to the health of the communities and ecosystems of which we are a part.",
         body: "Ways of living, working, and organising that restore rather than deplete human and ecological systems. Regenerative culture seeks not merely to sustain what exists, but to create conditions in which life can thrive. It asks how we might contribute to the health of the communities and ecosystems of which we are a part.",
       },
+      {
+        term: "Mindfulness",
+        searchText:
+          "The practice of paying attention to present-moment experience with openness and non-judgment. Rather than trying to change what we feel, mindfulness helps us to develop acceptance, a place from which the most helpful reaction for us can arise. Research links mindfulness to reduced stress, improved wellbeing and empathy, and greater emotional resilience. Many wisdom traditions view it as a pathway to deeper insight and connection.",
+        body: "The practice of paying attention to present-moment experience with openness and non-judgment. Rather than trying to change what we feel, mindfulness helps us to develop acceptance, a place from which the most helpful reaction for us can arise. Research links mindfulness to reduced stress, improved wellbeing and empathy, and greater emotional resilience. Many wisdom traditions view it as a pathway to deeper insight and connection.",
+      },
+      {
+        term: "Meditation",
+        searchText:
+          "A broad family of practices that cultivate concentration, presence, and loving compassion. Found in many spiritual as well as secular traditions, meditation can help quietting our thought, deepen self-understanding, and strengthen our capacity to meet life's challenges with greater clarity and equanimity. At its heart, meditation is a practice of learning how to fully be with the lives we are living, and to do some in a moral way.",
+        body: "A broad family of practices that cultivate concentration, presence, and loving compassion. Found in many spiritual as well as secular traditions, meditation can help quietting our thought, deepen self-understanding, and strengthen our capacity to meet life's challenges with greater clarity and equanimity. At its heart, meditation is a practice of learning how to fully be with the lives we are living, and to do some in a moral way.",
+      },
+      {
+        term: "Somatic Healing",
+        searchText:
+          "An approach to healing that recognizes the body as the center of not only physical, but of emotional, psychological, and relational wellbeing. Somatic healing works with sensations, movement, breath, posture, and nervous system regulation to help process experiences that may not be accessible through thinking alone. It is based on the understanding that healing happens not only through insight, but through the felt experience of safety and connection.",
+        body: "An approach to healing that recognizes the body as the center of not only physical, but of emotional, psychological, and relational wellbeing. Somatic healing works with sensations, movement, breath, posture, and nervous system regulation to help process experiences that may not be accessible through thinking alone. It is based on the understanding that healing happens not only through insight, but through the felt experience of safety and connection.",
+      },
     ],
   },
 ];
@@ -273,13 +291,14 @@ function KeyConceptsPage() {
   return (
     <div className="container-narrow py-20 md:py-28">
       <header className="max-w-2xl">
-        <p className="eyebrow">Key Concepts</p>
+        <p className="eyebrow">Key concepts</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl text-primary">
-          A vocabulary for this moment.
+          Ideas that shaped my approach.
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          The words we use shape what we can see and do. Here are some that have changed
-          how I understand the world — added to over time.
+          I believe that full transparency about the concepts that have shaped us is an ethical
+          imperative. While I commit to ontological openness, these ideas form the foundation to what I
+          believe will create lasing positive change — in ourselves, and the wider world.
         </p>
       </header>
 
@@ -303,7 +322,6 @@ function KeyConceptsPage() {
               <h2 className="font-serif text-2xl md:text-3xl text-primary">
                 {section.title}
               </h2>
-              <p className="mt-1 text-muted-foreground">{section.subtitle}</p>
             </div>
 
             <dl className="mt-8 divide-y divide-border border-y border-border">
