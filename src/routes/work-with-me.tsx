@@ -29,15 +29,14 @@ const OFFERINGS = [
   },
   {
     id: "coaching",
-    title: "1:1 Coaching on Holistic Reconnection",
+    title: "1:1 Mentoring",
     body:
       "Personal accompaniment for those navigating climate grief, burnout, or a sense that the old map has stopped working. [Placeholder description — full details coming soon.]",
-    cta: { label: "Book a free 20-minute chat", href: "mailto:l.s.staas@gmail.com?subject=1:1%20Coaching" },
+    cta: { label: "Book a free 20-minute chat", href: "mailto:l.s.staas@gmail.com?subject=1:1%20Mentoring" },
   },
   {
     id: "cohort",
     title: "12-Month Cohort Programme",
-    sub: "Finding Yourself in Times of Crisis  ·  Working title — placeholder",
     body:
       "A small, year-long container for people ready to walk this work deeply. Cohort starts November 2026. [Placeholder description — full details coming soon.]",
     cta: { label: "I'm interested", href: "mailto:l.s.staas@gmail.com?subject=Cohort%20Programme" },
@@ -75,9 +74,6 @@ function WorkPage() {
             <div>
               <p className="eyebrow">0{i + 1}</p>
               <h2 className="mt-3 font-serif text-3xl text-primary">{o.title}</h2>
-              {o.sub && (
-                <p className="mt-2 text-xs uppercase tracking-widest text-clay">{o.sub}</p>
-              )}
             </div>
             <div>
               <p className="text-foreground/85 leading-relaxed">{o.body}</p>

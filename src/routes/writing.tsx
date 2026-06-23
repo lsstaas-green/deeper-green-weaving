@@ -1,77 +1,106 @@
 import { createFileRoute } from "@tanstack/react-router";
-import article1 from "@/assets/article-1.jpg";
-import article2 from "@/assets/article-2.jpg";
-import article3 from "@/assets/article-3.jpg";
 
 export const Route = createFileRoute("/writing")({
   head: () => ({
     meta: [
       { title: "Writing — A Deeper Green | Leonie Staas" },
-      { name: "description", content: "Essays on climate, consciousness, and reconnection." },
+      {
+        name: "description",
+        content:
+          "Essays on the metacrisis, its inner dimensions, and the practice of coming back to life.",
+      },
       { property: "og:title", content: "Writing — A Deeper Green" },
-      { property: "og:description", content: "Essays on climate, consciousness, and reconnection." },
+      {
+        property: "og:description",
+        content:
+          "Essays on the metacrisis, its inner dimensions, and the practice of coming back to life.",
+      },
     ],
   }),
   component: WritingPage,
 });
 
-const SUBSTACK = [
+const SUBSTACK_URL = "https://leoniestaas.substack.com";
+const SUBSCRIBE_URL = "https://leoniestaas.substack.com/subscribe";
+
+const ARTICLES = [
   {
-    title: "Will Technology Save Us?",
-    sub: "On System, Self, and the Power of Choice",
-    excerpt:
-      "We keep waiting for the breakthrough that will rescue us. But the deepest technology is the one we live inside.",
-    href: "#",
-    img: article1,
+    title: "When We Forgot About Plants",
+    sub: "A conversation with Amazonian scholar Luis Luna on plant intelligence, consciousness, and the relationship the West forgot.",
+    date: "May 2026",
+    href: "https://leoniestaas.substack.com/p/when-we-forgot-about-plants",
+  },
+  {
+    title: "Psychedelic Healing for Climate Despair",
+    sub: "My unfiltered story of grief, stigma, and finding back to life.",
+    date: "April 2026",
+    href: "https://leoniestaas.substack.com/p/psychedelic-healing-for-climate-despair",
+  },
+  {
+    title: "\"Burning\" the Greed",
+    sub: "A Gift Economy and its Deeper Lessons.",
+    date: "March 2026",
+    href: "https://leoniestaas.substack.com/p/burning-the-greed",
   },
   {
     title: "Measuring What Matters",
-    sub: "The Unraveling Promise of Infinite Growth",
-    excerpt:
-      "When the indicators we trusted stop pointing at anything real, what do we steer by?",
-    href: "#",
-    img: article2,
+    sub: "The Unraveling Promise of Infinite Growth.",
+    date: "February 2026",
+    href: "https://leoniestaas.substack.com/p/measuring-what-matters",
+  },
+  {
+    title: "Life is Good",
+    sub: "And You're Allowed to Feel That Way.",
+    date: "January 2026",
+    href: "https://leoniestaas.substack.com/p/life-is-good",
   },
   {
     title: "Can I Still Have Children Today?",
-    sub: "A 30-Year-Old's Mind Between Madness and Meaning",
+    sub: "A 30-year-old's Mind Between Madness And Meaning.",
     excerpt:
       "A question I didn't choose, asked from inside a life that still wants to be lived.",
-    href: "#",
-    img: article3,
+    date: "January 2026",
+    href: "https://leoniestaas.substack.com/p/can-i-still-have-children-today",
+  },
+  {
+    title: "The Triangle of Disconnection",
+    sub: "Or What The Climate Crisis Really Is.",
+    date: "January 2026",
+    href: "https://leoniestaas.substack.com/p/the-triangle-of-disconnection",
+  },
+  {
+    title: "Will Technology Save Us?",
+    sub: "On System, Self, and The Power of Choice.",
+    date: "January 2026",
+    href: "https://leoniestaas.substack.com/p/will-technology-save-us",
   },
 ];
 
 const MEDIA = [
   {
-    title: "[External essay title — placeholder]",
-    outlet: "OPEN Foundation",
-    excerpt: "Short overview of the piece. To be filled in.",
-    href: "#",
-  },
-  {
-    title: "[External essay title — placeholder]",
-    outlet: "PSYCA",
-    excerpt: "Short overview of the piece. To be filled in.",
-    href: "#",
-  },
-  {
-    title: "[Podcast or interview — placeholder]",
     outlet: "DoubleBlind Magazine",
-    excerpt: "Short overview of the conversation. To be filled in.",
-    href: "#",
+    title: "As Climate Grief Deepens, Psychedelic Therapy Enters the Chat",
+    href: "https://doubleblindmag.com/as-climate-grief-deepens-psychedelic-therapy-enters-the-chat/",
   },
   {
-    title: "[Podcast or interview — placeholder]",
-    outlet: "Entheogenic Renaissance",
-    excerpt: "Short overview of the conversation. To be filled in.",
-    href: "#",
+    outlet: "DoubleBlind Magazine",
+    title: "What's the Real Cost of Flying for Psychedelic Healing?",
+    href: "https://doubleblindmag.com/whats-the-real-cost-of-flying-for-psychedelic-healing/",
   },
   {
-    title: "[Panel or talk — placeholder]",
-    outlet: "[Outlet]",
-    excerpt: "Short overview of the appearance. To be filled in.",
-    href: "#",
+    outlet: "Entheogenic Renaissance · YouTube",
+    title: "Conversation on the metacrisis and inner work.",
+    href: "https://www.youtube.com/results?search_query=Entheogenic+Renaissance+Leonie+Staas",
+  },
+  {
+    outlet: "OPEN Foundation",
+    title: "Psychedelics for Planetary Action: Unlocking An Overlooked Potential — Part 1",
+    href: "https://open-foundation.org/psychedelics-for-planetary-action-part-1/",
+  },
+  {
+    outlet: "OPEN Foundation",
+    title: "Psychedelics for Planetary Action: Unlocking An Overlooked Potential — Part 2",
+    href: "https://open-foundation.org/psychedelics-for-planetary-action-unlocking-an-overlooked-potential-part-2/",
   },
 ];
 
@@ -95,7 +124,7 @@ function SubscribeBlock() {
         work as it unfolds.
       </p>
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <a href="https://substack.com/" target="_blank" rel="noreferrer" className="btn-primary">
+        <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer" className="btn-primary">
           Subscribe on Substack
         </a>
         <a
@@ -120,27 +149,44 @@ function WritingPage() {
         <p className="eyebrow">Writing</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl text-primary">A Deeper Green</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Essays on the metacrisis, the inner work of our time, and the practice of coming
-          back to life.
+          Essays on the metacrisis, its inner dimensions, and the practice of coming back to life.
         </p>
       </header>
 
       <section className="mt-16">
-        <h2 className="font-serif text-2xl text-primary">From Substack</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {SUBSTACK.map((a) => (
-            <a key={a.title} href={a.href} className="card-soft block overflow-hidden p-0">
-              <img src={a.img} alt="" loading="lazy" width={800} height={600} className="aspect-[16/9] w-full object-cover" />
-              <div className="p-6">
-                <p className="eyebrow text-clay">Substack</p>
-                <h3 className="mt-3 font-serif text-xl leading-snug text-primary">{a.title}</h3>
-                <p className="mt-1 text-sm italic text-muted-foreground">{a.sub}</p>
-                <p className="mt-4 text-sm text-foreground/80">{a.excerpt}</p>
-                <span className="mt-5 inline-block text-sm text-accent">Read on Substack →</span>
-              </div>
-            </a>
-          ))}
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="font-serif text-2xl text-primary">From Substack</h2>
+          <a href={SUBSTACK_URL} target="_blank" rel="noreferrer" className="text-sm text-primary underline-offset-4 hover:underline">
+            All posts →
+          </a>
         </div>
+        <ul className="mt-8 divide-y divide-border border-y border-border">
+          {ARTICLES.map((a) => (
+            <li key={a.title}>
+              <a
+                href={a.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group block py-6 transition hover:bg-secondary/40"
+              >
+                <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
+                  <div>
+                    <h3 className="font-serif text-xl leading-snug text-primary group-hover:text-accent">
+                      {a.title}
+                    </h3>
+                    <p className="mt-1 text-sm italic text-muted-foreground">{a.sub}</p>
+                    {a.excerpt && (
+                      <p className="mt-3 max-w-2xl text-sm text-foreground/80">{a.excerpt}</p>
+                    )}
+                  </div>
+                  <span className="shrink-0 text-xs uppercase tracking-widest text-clay">
+                    {a.date}
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <div className="mt-16">
@@ -152,16 +198,26 @@ function WritingPage() {
         <p className="mt-2 text-sm text-muted-foreground">
           Features, interviews, podcasts, and panels.
         </p>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {MEDIA.map((a) => (
-            <a key={a.title} href={a.href} className="card-soft block">
-              <p className="eyebrow text-clay">{a.outlet}</p>
-              <h3 className="mt-3 font-serif text-xl leading-snug text-primary">{a.title}</h3>
-              <p className="mt-4 text-sm text-foreground/80">{a.excerpt}</p>
-              <span className="mt-5 inline-block text-sm text-accent">Read the piece →</span>
-            </a>
+        <ul className="mt-8 divide-y divide-border border-y border-border">
+          {MEDIA.map((m) => (
+            <li key={m.title}>
+              <a
+                href={m.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-baseline justify-between gap-6 py-6 transition hover:bg-secondary/40"
+              >
+                <div>
+                  <p className="eyebrow text-clay">{m.outlet}</p>
+                  <h3 className="mt-2 font-serif text-xl leading-snug text-primary group-hover:text-accent">
+                    {m.title}
+                  </h3>
+                </div>
+                <span className="shrink-0 text-sm text-accent">→</span>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </div>
   );

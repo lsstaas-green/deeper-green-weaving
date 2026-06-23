@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import heroPortrait from "@/assets/leonie-portrait.jpg";
-import article1 from "@/assets/article-1.jpg";
-import article2 from "@/assets/article-2.jpg";
-import article3 from "@/assets/article-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,35 +14,40 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Leonie Staas — A Deeper Green" },
       {
         property: "og:description",
-        content: "What if healing the planet and healing ourselves were never two separate journeys?",
+        content:
+          "What if healing ourselves and healing our planet were never two separate journeys?",
       },
     ],
   }),
   component: Home,
 });
 
+const SUBSTACK_URL = "https://leoniestaas.substack.com";
+const SUBSCRIBE_URL = "https://leoniestaas.substack.com/subscribe";
+const EMAIL = "l.s.staas@gmail.com";
+
 const COMPETENCIES = [
   {
-    eyebrow: "Climate Professional",
-    quote: "I understand the physical and social realities of our changing planet.",
+    eyebrow: "Climate Modelling and Policy",
+    quote: "Understanding the physical and social realities of our changing planet.",
     points: [
       { text: "6 years at the IEA's World Energy Outlook Team", href: "https://www.iea.org/reports/world-energy-outlook-2024" },
       { text: "Specialist in behaviour change for the climate transition" },
-      { text: "Speaker at COPs and the German Chancellery" },
+      { text: "High-level key note speaker at COPs or German Chancellery" },
     ],
   },
   {
     eyebrow: "Mental Health & Psychedelic Healing",
-    quote: "I understand the inner landscape that determines how we meet this moment.",
+    quote: "Transforming the inner landscape that determines how we meet this moment.",
     points: [
       { text: "Certified Psychedelic Practitioner, Synthesis Institute", href: "https://www.synthesisinstitute.com/" },
       { text: "Certified Yin Yoga Teacher" },
-      { text: "Long-term meditation & embodiment practitioner" },
+      { text: "Meditation and embodiment practices" },
     ],
   },
   {
     eyebrow: "The Work That Reconnects & Active Hope",
-    quote: "I help others find their way back to agency, grief, and hope.",
+    quote: "Finding our way back to agency, belonging, and hope.",
     points: [
       { text: "Applied Eco-Dharma" },
       { text: "Group work for climate emotions" },
@@ -55,44 +58,85 @@ const COMPETENCIES = [
 
 const OFFERINGS = [
   { title: "Active Hope Workshop", blurb: "Group work in Joanna Macy's tradition — feel, reconnect, act.", hash: "#active-hope" },
-  { title: "1:1 Coaching on Holistic Reconnection", blurb: "Personal accompaniment through climate grief and transition.", hash: "#coaching" },
-  { title: "12-Month Cohort Programme", blurb: "Finding Yourself in Times of Crisis. (Working title — starts Nov 2026.)", hash: "#cohort" },
+  { title: "1:1 Mentoring", blurb: "Personal accompaniment through climate grief and transition.", hash: "#coaching" },
+  { title: "12-Month Cohort Programme", blurb: "Finding Yourself in Times of Crisis. Starts November 2026.", hash: "#cohort" },
   { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and a path to legal psychedelic support.", hash: "#psychedelic" },
 ];
 
 const AFFILIATIONS = [
-  { name: "International Energy Agency", note: "Former — World Energy Outlook", href: "https://www.iea.org/" },
-  { name: "PsyGaia", note: "Team member", href: "#" },
-  { name: "PsychedeliCare", note: "European Citizens' Movement", href: "#" },
+  {
+    name: "International Energy Agency",
+    note: "Former — World Energy Outlook",
+    initials: "IEA",
+    href: "https://www.iea.org/commentaries/do-we-need-to-change-our-behaviour-to-reach-net-zero-by-2050",
+  },
+  {
+    name: "PsyGaia",
+    note: "Climate and Active Hope",
+    initials: "PG",
+    href: "https://psygaia.org/about/",
+  },
+  {
+    name: "PsychedeliCare",
+    note: "European Citizens' Movement",
+    initials: "PC",
+    href: "https://psychedelicare.eu/",
+  },
+  {
+    name: "The Work That Reconnects Network",
+    note: "Facilitator community",
+    initials: "WTR",
+    href: "https://workthatreconnects.org/what-is-the-work-that-reconnects/",
+  },
 ];
 
 const ARTICLES = [
   {
+    title: "The Triangle of Disconnection",
+    sub: "Or What The Climate Crisis Really Is",
+    img: "https://substack-post-media.s3.amazonaws.com/public/images/58851aa3-5338-41f8-b7f0-12f132fc7666_6016x4016.jpeg",
+    href: "https://leoniestaas.substack.com/p/the-triangle-of-disconnection",
+  },
+  {
     title: "Will Technology Save Us?",
-    sub: "On System, Self, and the Power of Choice",
-    excerpt: "We keep waiting for the breakthrough that will rescue us. But the deepest technology is the one we live inside.",
-    href: "#",
-    img: article1,
+    sub: "On System, Self, and The Power of Choice",
+    img: "https://substack-post-media.s3.amazonaws.com/public/images/0fc95cba-9663-48f8-bad6-ef4e21b99b47_2048x1536.jpeg",
+    href: "https://leoniestaas.substack.com/p/will-technology-save-us",
   },
   {
-    title: "Measuring What Matters",
-    sub: "The Unraveling Promise of Infinite Growth",
-    excerpt: "When the indicators we trusted stop pointing at anything real, what do we steer by?",
-    href: "#",
-    img: article2,
-  },
-  {
-    title: "Can I Still Have Children Today?",
-    sub: "A 30-Year-Old's Mind Between Madness and Meaning",
-    excerpt: "A question I didn't choose, asked from inside a life that still wants to be lived.",
-    href: "#",
-    img: article3,
+    title: "Psychedelic Healing for Climate Despair",
+    sub: "My unfiltered story of grief, stigma, and finding back to life",
+    img: "https://substack-post-media.s3.amazonaws.com/public/images/e30cb50f-fac9-4230-a2de-afff412c7ccf_2400x1723.png",
+    href: "https://leoniestaas.substack.com/p/psychedelic-healing-for-climate-despair",
   },
 ];
 
 const MEDIA = [
-  { outlet: "DoubleBlind Magazine", desc: "Feature on climate grief and psychedelic integration.", href: "#" },
-  { outlet: "Entheogenic Renaissance · Podcast", desc: "Conversation on the metacrisis and inner work (YouTube).", href: "#" },
+  {
+    outlet: "DoubleBlind Magazine",
+    desc: "As Climate Grief Deepens, Psychedelic Therapy Enters the Chat",
+    href: "https://doubleblindmag.com/as-climate-grief-deepens-psychedelic-therapy-enters-the-chat/",
+  },
+  {
+    outlet: "DoubleBlind Magazine",
+    desc: "What's the Real Cost of Flying for Psychedelic Healing?",
+    href: "https://doubleblindmag.com/whats-the-real-cost-of-flying-for-psychedelic-healing/",
+  },
+  {
+    outlet: "Entheogenic Renaissance · Podcast",
+    desc: "Conversation on the metacrisis and inner work (YouTube).",
+    href: "https://www.youtube.com/results?search_query=Entheogenic+Renaissance+Leonie+Staas",
+  },
+  {
+    outlet: "OPEN Foundation",
+    desc: "Psychedelics for Planetary Action — Part 1",
+    href: "https://open-foundation.org/psychedelics-for-planetary-action-part-1/",
+  },
+  {
+    outlet: "OPEN Foundation",
+    desc: "Psychedelics for Planetary Action — Part 2",
+    href: "https://open-foundation.org/psychedelics-for-planetary-action-unlocking-an-overlooked-potential-part-2/",
+  },
 ];
 
 function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -102,6 +146,77 @@ function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
     </svg>
+  );
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "ok">("idle");
+  return (
+    <div className="relative -mt-2 overflow-hidden rounded-3xl border border-accent/40 bg-cream p-8 shadow-[0_30px_80px_-40px_rgba(40,80,60,0.45)] md:p-10">
+      <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-accent/20 blur-2xl" aria-hidden />
+      <div className="absolute -bottom-16 -left-10 h-44 w-44 rounded-full bg-primary/15 blur-2xl" aria-hidden />
+      <div className="relative grid gap-8 md:grid-cols-[1.1fr_1fr] md:items-start">
+        <div>
+          <p className="eyebrow text-accent">Get in touch</p>
+          <h3 className="mt-3 font-serif text-2xl text-primary md:text-3xl">
+            I'd love to hear from you.
+          </h3>
+          <p className="mt-3 text-foreground/80">
+            Let's connect and see where it takes us!
+          </p>
+          <p className="mt-6 text-sm text-muted-foreground">
+            We can work in English or German.
+          </p>
+        </div>
+
+        <form
+          action={`https://formsubmit.co/${EMAIL}`}
+          method="POST"
+          onSubmit={() => setStatus("ok")}
+          className="space-y-3"
+        >
+          <input type="hidden" name="_subject" value="New message from a-deeper-green website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+          <label className="block">
+            <span className="sr-only">Name</span>
+            <input
+              required
+              name="name"
+              placeholder="Your name"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-accent"
+            />
+          </label>
+          <label className="block">
+            <span className="sr-only">Email</span>
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="Your email"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-accent"
+            />
+          </label>
+          <label className="block">
+            <span className="sr-only">Message</span>
+            <textarea
+              required
+              name="message"
+              rows={4}
+              placeholder="A short message…"
+              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-accent"
+            />
+          </label>
+          <button type="submit" className="btn-primary w-full sm:w-auto">
+            Send message
+          </button>
+          {status === "ok" && (
+            <p className="text-xs text-muted-foreground">Opening confirmation…</p>
+          )}
+        </form>
+      </div>
+    </div>
   );
 }
 
@@ -115,14 +230,14 @@ function Home() {
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
           height={1280}
-          className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
+          className="absolute inset-0 h-full w-full object-cover object-[78%_18%] md:object-[72%_22%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/55 to-primary/85" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/65 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/20" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
           <p className="eyebrow text-cream/85">Leonie Staas</p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
-            What if healing the planet and healing ourselves were never two separate journeys?
+            What if healing ourselves and healing our planet were never two separate journeys?
           </h1>
           <p className="mt-6 max-w-xl text-base text-cream/85 sm:text-lg">
             Climate Professional · Active Hope Facilitator · Psychedelic Practitioner · Writer
@@ -134,16 +249,6 @@ function Home() {
             <Link to="/about" className="btn-ghost border-cream/70 text-cream hover:bg-cream/10">
               My story
             </Link>
-            <a
-              href="https://instagram.com/a_deeper_green"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram @a_deeper_green"
-              className="ml-1 inline-flex items-center gap-2 rounded-full border border-cream/60 px-4 py-2 text-sm text-cream/90 hover:bg-cream/10"
-            >
-              <InstagramIcon className="h-4 w-4" />
-              @a_deeper_green
-            </a>
           </div>
         </div>
       </section>
@@ -155,68 +260,88 @@ function Home() {
           <h2 className="mt-4 font-serif text-3xl md:text-4xl text-primary">
             My work lives at the intersection of three unique perspectives.
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            Climate. Inner landscape. Reconnection. Each on its own is not enough — together
-            they begin to describe a way through.
-          </p>
         </div>
 
-        {/* Triangle visualization — apex on top, two base corners below */}
-        <div className="relative mx-auto mt-20 max-w-5xl">
-          {/* connecting triangle lines (desktop only) */}
+        {/* Triangle visualization */}
+        <div className="relative mx-auto mt-16 max-w-6xl">
           <svg
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-0 hidden h-[420px] w-[640px] -translate-x-1/2 text-primary/40 md:block"
-            viewBox="0 0 640 420"
+            className="pointer-events-none absolute left-1/2 top-0 hidden h-[520px] w-[760px] -translate-x-1/2 md:block"
+            viewBox="0 0 760 520"
           >
+            <defs>
+              <linearGradient id="triGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.85" />
+              </linearGradient>
+              <radialGradient id="triFill" cx="50%" cy="55%" r="60%">
+                <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.10" />
+                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.02" />
+              </radialGradient>
+            </defs>
             <polygon
-              points="320,40 60,380 580,380"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeDasharray="4 8"
+              points="380,50 70,470 690,470"
+              fill="url(#triFill)"
+              stroke="url(#triGrad)"
+              strokeWidth="2.5"
             />
           </svg>
 
-          <div className="grid gap-14 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
-            {COMPETENCIES.map((c, i) => (
-              <article
-                key={c.eyebrow}
-                className={
-                  "relative text-center " +
-                  (i === 0
-                    ? "md:col-span-2 md:mx-auto md:max-w-sm"
-                    : "md:max-w-sm " + (i === 1 ? "md:justify-self-start md:text-left" : "md:justify-self-end md:text-right"))
-                }
-              >
-                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-cream shadow-sm md:mx-0" style={i === 0 ? { marginLeft: "auto", marginRight: "auto" } : i === 1 ? { marginLeft: 0 } : { marginLeft: "auto", marginRight: 0 }}>
-                  <span className="h-3 w-3 rounded-full bg-primary" />
+          <div className="grid gap-12 md:grid-cols-2 md:gap-x-20 md:gap-y-16">
+            {/* TOP — content above the dot */}
+            <article className="relative md:col-span-2 md:mx-auto md:max-w-sm md:text-center">
+              <CompetencyBody c={COMPETENCIES[0]} align="center" />
+              <Dot className="mx-auto mt-6" />
+            </article>
+
+            {/* BOTTOM LEFT — content to the LEFT of the dot */}
+            <article className="relative md:justify-self-start md:max-w-sm md:text-right">
+              <div className="md:flex md:items-start md:gap-5">
+                <div className="md:flex-1">
+                  <CompetencyBody c={COMPETENCIES[1]} align="right" />
                 </div>
-                <p className="eyebrow">{c.eyebrow}</p>
-                <p className="mt-3 font-serif text-lg leading-snug text-primary">
-                  "{c.quote}"
-                </p>
-                <ul className={"mt-5 space-y-2 text-sm text-foreground/80 " + (i === 2 ? "md:[&_li]:flex-row-reverse" : "")}>
-                  {c.points.map((p) => (
-                    <li key={p.text} className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      {p.href ? (
-                        <a href={p.href} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
-                          {p.text}
-                        </a>
-                      ) : (
-                        <span>{p.text}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+                <Dot className="hidden md:block md:mt-2" />
+              </div>
+              <Dot className="mt-6 md:hidden" />
+            </article>
+
+            {/* BOTTOM RIGHT — content to the RIGHT of the dot */}
+            <article className="relative md:justify-self-end md:max-w-sm md:text-left">
+              <div className="md:flex md:items-start md:gap-5">
+                <Dot className="hidden md:block md:mt-2" />
+                <div className="md:flex-1">
+                  <CompetencyBody c={COMPETENCIES[2]} align="left" />
+                </div>
+              </div>
+              <Dot className="mt-6 md:hidden" />
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Offerings */}
+      {/* Affiliations */}
+      <section className="container-narrow pb-24">
+        <p className="eyebrow text-center">Key positions & affiliations</p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {AFFILIATIONS.map((a) => (
+            <a
+              key={a.name}
+              href={a.href}
+              target="_blank"
+              rel="noreferrer"
+              className="card-soft flex flex-col items-center text-center transition hover:border-accent"
+            >
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-cream shadow-inner">
+                <span className="font-serif text-lg tracking-wide">{a.initials}</span>
+              </div>
+              <p className="mt-4 font-serif text-lg text-primary">{a.name}</p>
+              <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{a.note}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Offerings + Contact */}
       <section className="bg-secondary/40 py-24 md:py-32">
         <div className="container-narrow">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -240,19 +365,14 @@ function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Affiliations */}
-      <section className="container-narrow py-24">
-        <p className="eyebrow text-center">Key positions & affiliations</p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {AFFILIATIONS.map((a) => (
-            <a key={a.name} href={a.href} className="card-soft text-center">
-              <p className="font-serif text-xl text-primary">{a.name}</p>
-              <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">{a.note}</p>
-            </a>
-          ))}
+          <p className="mt-6 text-center text-sm italic text-muted-foreground">
+            We can work in English or German.
+          </p>
+
+          <div className="mt-12">
+            <ContactForm />
+          </div>
         </div>
       </section>
 
@@ -262,26 +382,31 @@ function Home() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">From A Deeper Green</p>
-              <h2 className="mt-3 text-3xl md:text-4xl text-primary">Recent writing</h2>
+              <Link to="/writing" className="mt-3 inline-block text-3xl text-primary underline-offset-4 hover:underline md:text-4xl">
+                Recent writing
+              </Link>
             </div>
-            <a href="#" className="text-sm text-primary underline-offset-4 hover:underline">
+            <a href={SUBSCRIBE_URL} target="_blank" rel="noreferrer" className="text-sm text-primary underline-offset-4 hover:underline">
               Subscribe on Substack →
             </a>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {ARTICLES.map((a) => (
-              <a key={a.title} href={a.href} className="card-soft block overflow-hidden p-0">
+              <a key={a.title} href={a.href} target="_blank" rel="noreferrer" className="card-soft block overflow-hidden p-0">
                 <img src={a.img} alt="" loading="lazy" width={800} height={600} className="aspect-[4/3] w-full object-cover" />
                 <div className="p-6">
                   <p className="eyebrow text-clay">Essay</p>
                   <h3 className="mt-3 font-serif text-xl leading-snug text-primary">{a.title}</h3>
                   <p className="mt-1 text-sm italic text-muted-foreground">{a.sub}</p>
-                  <p className="mt-4 text-sm text-foreground/80">{a.excerpt}</p>
-                  <span className="mt-5 inline-block text-sm text-accent">Read more →</span>
+                  <span className="mt-5 inline-block text-sm text-accent">Read on Substack →</span>
                 </div>
               </a>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link to="/writing" className="btn-ghost">See all →</Link>
           </div>
         </div>
       </section>
@@ -290,7 +415,7 @@ function Home() {
       <section className="container-narrow py-24 md:py-32">
         <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
           <div>
-            <p className="eyebrow">In the media</p>
+            <p className="eyebrow">Dive deeper</p>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl text-primary">
               In the media.
             </h2>
@@ -298,17 +423,25 @@ function Home() {
               Features, podcasts, and panels where my work has appeared.
             </p>
             <a
-              href="mailto:l.s.staas@gmail.com?subject=Media%20%26%20Speaking%20Inquiry"
+              href={`mailto:${EMAIL}?subject=Media%20%26%20Speaking%20Inquiry`}
               className="btn-primary mt-8"
             >
               Media & Speaking Inquiries
+            </a>
+            <a
+              href="https://instagram.com/a_deeper_green"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-primary underline-offset-4 hover:underline"
+            >
+              <InstagramIcon /> @a_deeper_green
             </a>
           </div>
 
           <ul className="divide-y divide-border">
             {MEDIA.map((m) => (
-              <li key={m.outlet} className="py-6">
-                <a href={m.href} className="group flex items-baseline justify-between gap-6">
+              <li key={m.desc} className="py-6">
+                <a href={m.href} target="_blank" rel="noreferrer" className="group flex items-baseline justify-between gap-6">
                   <div>
                     <p className="font-serif text-xl text-primary group-hover:text-accent">{m.outlet}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{m.desc}</p>
@@ -321,5 +454,53 @@ function Home() {
         </div>
       </section>
     </>
+  );
+}
+
+function Dot({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={
+        "block h-5 w-5 rounded-full bg-gradient-to-br from-accent to-primary shadow-[0_0_0_6px_rgba(190,165,120,0.18)] " +
+        className
+      }
+      aria-hidden
+    />
+  );
+}
+
+function CompetencyBody({
+  c,
+  align,
+}: {
+  c: (typeof COMPETENCIES)[number];
+  align: "left" | "right" | "center";
+}) {
+  const textAlign =
+    align === "center" ? "text-center" : align === "right" ? "md:text-right" : "md:text-left";
+  return (
+    <div className={textAlign}>
+      <p className="eyebrow">{c.eyebrow}</p>
+      <p className="mt-3 font-serif text-lg leading-snug text-primary">"{c.quote}"</p>
+      <ul
+        className={
+          "mt-4 space-y-2 text-sm text-foreground/80 " +
+          (align === "right" ? "md:[&_li]:flex-row-reverse md:[&_li]:text-right" : "")
+        }
+      >
+        {c.points.map((p) => (
+          <li key={p.text} className="flex items-start gap-2">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            {p.href ? (
+              <a href={p.href} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
+                {p.text}
+              </a>
+            ) : (
+              <span>{p.text}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

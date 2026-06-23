@@ -144,7 +144,7 @@ function SiteHeader() {
                       Essays on climate, consciousness and reconnection.
                     </p>
                     <a
-                      href="https://substack.com/"
+                      href="https://leoniestaas.substack.com/subscribe"
                       target="_blank"
                       rel="noreferrer"
                       className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-xs text-primary-foreground"
@@ -203,7 +203,7 @@ function SiteFooter() {
           <p className="text-sm text-muted-foreground">
             Subscribe to{" "}
             <a
-              href="https://substack.com/"
+              href="https://leoniestaas.substack.com"
               target="_blank"
               rel="noreferrer"
               className="italic text-primary underline-offset-4 hover:underline"
