@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import heroPortrait from "@/assets/leonie-portrait.jpg";
+import heroPortrait from "@/assets/leonie-hero-wide.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -229,8 +229,8 @@ function Home() {
           src={heroPortrait}
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover object-[78%_18%] md:object-[72%_22%]"
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover object-[60%_40%] md:object-[55%_40%]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/20" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
