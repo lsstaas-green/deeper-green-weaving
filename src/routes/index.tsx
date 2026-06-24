@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import heroPortrait from "@/assets/leonie-portrait.jpg";
+import heroPortrait from "@/assets/leonie-hero-wide.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -229,8 +229,8 @@ function Home() {
           src={heroPortrait}
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover object-[78%_18%] md:object-[72%_22%]"
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover object-[60%_40%] md:object-[55%_40%]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/20" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
@@ -264,56 +264,67 @@ function Home() {
 
         {/* Triangle visualization */}
         <div className="relative mx-auto mt-16 max-w-6xl">
-          <svg
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-0 hidden h-[520px] w-[760px] -translate-x-1/2 md:block"
-            viewBox="0 0 760 520"
-          >
-            <defs>
-              <linearGradient id="triGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.85" />
-              </linearGradient>
-              <radialGradient id="triFill" cx="50%" cy="55%" r="60%">
-                <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.10" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.02" />
-              </radialGradient>
-            </defs>
-            <polygon
-              points="380,50 70,470 690,470"
-              fill="url(#triFill)"
-              stroke="url(#triGrad)"
-              strokeWidth="2.5"
-            />
-          </svg>
+          {/* Desktop: compact triangle with dots at the corners and text outside the lines */}
+          <div className="relative hidden h-[440px] md:block">
+            <svg
+              aria-hidden
+              className="pointer-events-none absolute inset-0 h-full w-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="triGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.85" />
+                </linearGradient>
+                <radialGradient id="triFill" cx="50%" cy="60%" r="60%">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0.10" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.02" />
+                </radialGradient>
+              </defs>
+              <polygon
+                points="50,20 30,80 70,80"
+                fill="url(#triFill)"
+                stroke="url(#triGrad)"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
 
-          <div className="grid gap-12 md:grid-cols-2 md:gap-x-20 md:gap-y-16">
-            {/* TOP — content above the dot */}
-            <article className="relative md:col-span-2 md:mx-auto md:max-w-sm md:text-center">
+            {/* Top corner */}
+            <article className="absolute bottom-[80%] left-1/2 -translate-x-1/2 w-64 pb-4 text-center">
+              <CompetencyBody c={COMPETENCIES[0]} align="center" />
+              <Dot className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2" />
+            </article>
+
+            {/* Bottom-left corner */}
+            <article className="absolute right-[70%] top-[80%] -translate-y-1/2 w-48 pr-4 text-right">
+              <CompetencyBody c={COMPETENCIES[1]} align="right" />
+              <Dot className="absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            </article>
+
+            {/* Bottom-right corner */}
+            <article className="absolute left-[70%] top-[80%] -translate-y-1/2 w-48 pl-4 text-left">
+              <Dot className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2" />
+              <CompetencyBody c={COMPETENCIES[2]} align="left" />
+            </article>
+          </div>
+
+          {/* Mobile: stacked cards */}
+          <div className="grid gap-12 md:hidden">
+            <article className="text-center">
               <CompetencyBody c={COMPETENCIES[0]} align="center" />
               <Dot className="mx-auto mt-6" />
             </article>
 
-            {/* BOTTOM LEFT — content to the LEFT of the dot */}
-            <article className="relative md:justify-self-start md:max-w-sm md:text-right">
-              <div className="md:flex md:items-start md:gap-5">
-                <div className="md:flex-1">
-                  <CompetencyBody c={COMPETENCIES[1]} align="right" />
-                </div>
-                <Dot className="hidden md:block md:mt-2" />
-              </div>
-              <Dot className="mt-6 md:hidden" />
+            <article className="text-left">
+              <CompetencyBody c={COMPETENCIES[1]} align="right" />
+              <Dot className="mx-auto mt-6" />
             </article>
 
-            {/* BOTTOM RIGHT — content to the RIGHT of the dot */}
-            <article className="relative md:justify-self-end md:max-w-sm md:text-left">
-              <div className="md:flex md:items-start md:gap-5">
-                <Dot className="hidden md:block md:mt-2" />
-                <div className="md:flex-1">
-                  <CompetencyBody c={COMPETENCIES[2]} align="left" />
-                </div>
-              </div>
-              <Dot className="mt-6 md:hidden" />
+            <article className="text-left">
+              <Dot className="mx-auto mt-6" />
+              <CompetencyBody c={COMPETENCIES[2]} align="left" />
             </article>
           </div>
         </div>
