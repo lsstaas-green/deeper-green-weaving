@@ -12,31 +12,38 @@ export const Route = createFileRoute("/resources")({
   component: ResourcesPage,
 });
 
-const SECTIONS = [
+const SECTIONS: Array<{
+  title: string;
+  items: Array<{ name: string; href: string }>;
+}> = [
   {
-    title: "Meditations",
+    title: "Mindfulness and meditation practice",
     items: [
-      { name: "[Meditation title — placeholder]", note: "Short one-line description.", href: "#" },
-      { name: "[Meditation title — placeholder]", note: "Short one-line description.", href: "#" },
+      { name: "Gaia House Buddhist Meditation Retreat Centre", href: "https://gaiahouse.co.uk/" },
+      { name: "Insight Meditation", href: "https://www.dharma.org/" },
+      { name: "Personal Happiness Index", href: "https://www.actionforhappiness.org/" },
+      { name: "The Heart Mind Institute Courses", href: "https://heartmind.co/" },
     ],
   },
   {
-    title: "Books",
+    title: "Climate Emotions",
     items: [
-      { name: "[Book title — placeholder]", note: "Why this matters, in a sentence.", href: "#" },
-      { name: "[Book title — placeholder]", note: "Why this matters, in a sentence.", href: "#" },
+      { name: "Resources | Unthinkable", href: "https://www.unthinkable.earth/resources" },
+      { name: "Climate Mental Health Network", href: "https://www.climatementalhealth.net/" },
     ],
   },
   {
-    title: "Podcasts",
+    title: "Planetary Action",
     items: [
-      { name: "[Podcast — placeholder]", note: "Short one-line description.", href: "#" },
+      { name: "How to fight climate change | EcoTree", href: "https://ecotree.green/en/how-to-fight-climate-change" },
+      { name: "An Engaged Life | Up-rising", href: "https://www.up-rising.org/" },
     ],
   },
   {
-    title: "Other Programs",
+    title: "Psychedelic Healing",
     items: [
-      { name: "[Program — placeholder]", note: "Trainings, courses, or communities.", href: "#" },
+      { name: "How to use psychedelics", href: "https://howtousepsychedelics.com" },
+      { name: "The PsyGaia Framework", href: "https://psygaia.org/" },
     ],
   },
 ];
@@ -55,33 +62,22 @@ function ResourcesPage() {
         </p>
       </header>
 
-      <a
-        href="#"
-        className="mt-12 block rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/[0.07] to-accent/10 p-10 transition-transform hover:-translate-y-0.5"
-      >
-        <p className="eyebrow">Featured</p>
-        <h2 className="mt-3 font-serif text-3xl md:text-4xl text-primary">
-          The PsyGaia Framework
-        </h2>
-        <p className="mt-3 max-w-2xl text-foreground/80">
-          A framework for psychedelic work in service of personal and planetary healing.
-          [Description — placeholder.]
-        </p>
-        <span className="mt-6 inline-block text-sm text-accent">Open the framework →</span>
-      </a>
-
-      <div className="mt-20 grid gap-12 md:grid-cols-2">
+      <div className="mt-16 grid gap-12 md:grid-cols-2">
         {SECTIONS.map((s) => (
           <section key={s.title}>
             <h2 className="font-serif text-2xl text-primary">{s.title}</h2>
             <ul className="mt-6 divide-y divide-border">
               {s.items.map((it) => (
                 <li key={it.name} className="py-4">
-                  <a href={it.href} className="group flex items-baseline justify-between gap-4">
-                    <div>
-                      <p className="text-base text-foreground group-hover:text-primary">{it.name}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">{it.note}</p>
-                    </div>
+                  <a
+                    href={it.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-baseline justify-between gap-4"
+                  >
+                    <p className="text-base text-foreground group-hover:text-primary">
+                      {it.name}
+                    </p>
                     <span className="shrink-0 text-sm text-accent">→</span>
                   </a>
                 </li>

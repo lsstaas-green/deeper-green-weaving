@@ -15,6 +15,8 @@ import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as KeyConceptsRouteImport } from './routes/key-concepts'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkWithMeIndexRouteImport } from './routes/work-with-me.index'
+import { Route as WorkWithMeSlugRouteImport } from './routes/work-with-me.$slug'
 
 const WritingRoute = WritingRouteImport.update({
   id: '/writing',
@@ -46,22 +48,35 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkWithMeIndexRoute = WorkWithMeIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WorkWithMeRoute,
+} as any)
+const WorkWithMeSlugRoute = WorkWithMeSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WorkWithMeRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/key-concepts': typeof KeyConceptsRoute
   '/resources': typeof ResourcesRoute
-  '/work-with-me': typeof WorkWithMeRoute
+  '/work-with-me': typeof WorkWithMeRouteWithChildren
   '/writing': typeof WritingRoute
+  '/work-with-me/$slug': typeof WorkWithMeSlugRoute
+  '/work-with-me/': typeof WorkWithMeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/key-concepts': typeof KeyConceptsRoute
   '/resources': typeof ResourcesRoute
-  '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRoute
+  '/work-with-me/$slug': typeof WorkWithMeSlugRoute
+  '/work-with-me': typeof WorkWithMeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +84,10 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/key-concepts': typeof KeyConceptsRoute
   '/resources': typeof ResourcesRoute
-  '/work-with-me': typeof WorkWithMeRoute
+  '/work-with-me': typeof WorkWithMeRouteWithChildren
   '/writing': typeof WritingRoute
+  '/work-with-me/$slug': typeof WorkWithMeSlugRoute
+  '/work-with-me/': typeof WorkWithMeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,14 +98,17 @@ export interface FileRouteTypes {
     | '/resources'
     | '/work-with-me'
     | '/writing'
+    | '/work-with-me/$slug'
+    | '/work-with-me/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/key-concepts'
     | '/resources'
-    | '/work-with-me'
     | '/writing'
+    | '/work-with-me/$slug'
+    | '/work-with-me'
   id:
     | '__root__'
     | '/'
@@ -97,6 +117,8 @@ export interface FileRouteTypes {
     | '/resources'
     | '/work-with-me'
     | '/writing'
+    | '/work-with-me/$slug'
+    | '/work-with-me/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,7 +126,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   KeyConceptsRoute: typeof KeyConceptsRoute
   ResourcesRoute: typeof ResourcesRoute
-  WorkWithMeRoute: typeof WorkWithMeRoute
+  WorkWithMeRoute: typeof WorkWithMeRouteWithChildren
   WritingRoute: typeof WritingRoute
 }
 
@@ -152,27 +174,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work-with-me/': {
+      id: '/work-with-me/'
+      path: '/'
+      fullPath: '/work-with-me/'
+      preLoaderRoute: typeof WorkWithMeIndexRouteImport
+      parentRoute: typeof WorkWithMeRoute
+    }
+    '/work-with-me/$slug': {
+      id: '/work-with-me/$slug'
+      path: '/$slug'
+      fullPath: '/work-with-me/$slug'
+      preLoaderRoute: typeof WorkWithMeSlugRouteImport
+      parentRoute: typeof WorkWithMeRoute
+    }
   }
 }
+
+interface WorkWithMeRouteChildren {
+  WorkWithMeSlugRoute: typeof WorkWithMeSlugRoute
+  WorkWithMeIndexRoute: typeof WorkWithMeIndexRoute
+}
+
+const WorkWithMeRouteChildren: WorkWithMeRouteChildren = {
+  WorkWithMeSlugRoute: WorkWithMeSlugRoute,
+  WorkWithMeIndexRoute: WorkWithMeIndexRoute,
+}
+
+const WorkWithMeRouteWithChildren = WorkWithMeRoute._addFileChildren(
+  WorkWithMeRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   KeyConceptsRoute: KeyConceptsRoute,
   ResourcesRoute: ResourcesRoute,
-  WorkWithMeRoute: WorkWithMeRoute,
+  WorkWithMeRoute: WorkWithMeRouteWithChildren,
   WritingRoute: WritingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

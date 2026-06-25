@@ -57,35 +57,40 @@ const COMPETENCIES = [
 ];
 
 const OFFERINGS = [
-  { title: "Active Hope Workshop", blurb: "Group work in Joanna Macy's tradition — feel, reconnect, act.", hash: "#active-hope" },
-  { title: "1:1 Mentoring", blurb: "Personal accompaniment through climate grief and transition.", hash: "#coaching" },
-  { title: "12-Month Cohort Programme", blurb: "Finding Yourself in Times of Crisis. Starts November 2026.", hash: "#cohort" },
-  { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and a path to legal psychedelic support.", hash: "#psychedelic" },
+  { title: "Active Hope Workshop", blurb: "Group work in Joanna Macy's tradition — feel, reconnect, act.", slug: "active-hope" },
+  { title: "1:1 Mentorship", blurb: "Personal accompaniment through climate grief and transition.", slug: "mentorship" },
+  { title: "12-Month Cohort Programme", blurb: "Finding Yourself in Times of Crisis. Starts November 2026.", slug: "cohort" },
+  { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and a path to legal psychedelic support.", slug: "psychedelic" },
 ];
+
+import ieaLogo from "@/assets/logos/iea.asset.json";
+import psygaiaLogo from "@/assets/logos/psygaia.asset.json";
+import psychedelicareLogo from "@/assets/logos/psychedelicare.asset.json";
+import wtrLogo from "@/assets/logos/wtr.asset.json";
 
 const AFFILIATIONS = [
   {
     name: "International Energy Agency",
     note: "Former — World Energy Outlook",
-    initials: "IEA",
+    logo: ieaLogo.url,
     href: "https://www.iea.org/commentaries/do-we-need-to-change-our-behaviour-to-reach-net-zero-by-2050",
   },
   {
     name: "PsyGaia",
     note: "Climate and Active Hope",
-    initials: "PG",
+    logo: psygaiaLogo.url,
     href: "https://psygaia.org/about/",
   },
   {
     name: "PsychedeliCare",
     note: "European Citizens' Movement",
-    initials: "PC",
+    logo: psychedelicareLogo.url,
     href: "https://psychedelicare.eu/",
   },
   {
     name: "The Work That Reconnects Network",
     note: "Facilitator community",
-    initials: "WTR",
+    logo: wtrLogo.url,
     href: "https://workthatreconnects.org/what-is-the-work-that-reconnects/",
   },
 ];
@@ -224,16 +229,23 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden bg-primary">
         <img
           src={heroPortrait}
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover object-[60%_40%] md:object-[55%_40%]"
+          height={820}
+          className="absolute inset-0 h-full w-full object-cover object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/20" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
+        {/* Soft fade on the edges */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55)_100%)]" aria-hidden />
+        {/* Overall darken for readability */}
+        <div className="absolute inset-0 bg-black/45" aria-hidden />
+        {/* Left-side darker gradient under the heading and buttons */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" aria-hidden />
+        {/* Stronger fade at the very bottom under the buttons */}
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 via-black/30 to-transparent" aria-hidden />
+
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
           <p className="eyebrow text-cream/85">Leonie Staas</p>
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
@@ -263,9 +275,9 @@ function Home() {
         </div>
 
         {/* Triangle visualization */}
-        <div className="relative mx-auto mt-16 max-w-6xl">
-          {/* Desktop: compact triangle with dots at the corners and text outside the lines */}
-          <div className="relative hidden h-[440px] md:block">
+        <div className="relative mx-auto mt-24 max-w-6xl md:mt-32">
+          {/* Section heading clearance handled by mt-24/32 above */}
+          <div className="relative hidden h-[640px] md:block">
             <svg
               aria-hidden
               className="pointer-events-none absolute inset-0 h-full w-full"
@@ -283,7 +295,7 @@ function Home() {
                 </radialGradient>
               </defs>
               <polygon
-                points="50,20 30,80 70,80"
+                points="50,35 22,82 78,82"
                 fill="url(#triFill)"
                 stroke="url(#triGrad)"
                 strokeWidth="1"
@@ -291,22 +303,26 @@ function Home() {
               />
             </svg>
 
-            {/* Top corner */}
-            <article className="absolute bottom-[80%] left-1/2 -translate-x-1/2 w-64 pb-4 text-center">
+            {/* Top corner — text above the apex dot */}
+            <article className="absolute top-0 left-1/2 -translate-x-1/2 w-80 text-center">
               <CompetencyBody c={COMPETENCIES[0]} align="center" />
-              <Dot className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2" />
+              <Dot className="mx-auto mt-6" />
             </article>
 
-            {/* Bottom-left corner */}
-            <article className="absolute right-[70%] top-[80%] -translate-y-1/2 w-48 pr-4 text-right">
-              <CompetencyBody c={COMPETENCIES[1]} align="right" />
-              <Dot className="absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            {/* Bottom-left corner — text to the left of the dot */}
+            <article className="absolute left-0 top-[82%] -translate-y-1/2 flex w-[44%] items-center gap-4">
+              <div className="flex-1 text-right">
+                <CompetencyBody c={COMPETENCIES[1]} align="right" />
+              </div>
+              <Dot className="shrink-0" />
             </article>
 
-            {/* Bottom-right corner */}
-            <article className="absolute left-[70%] top-[80%] -translate-y-1/2 w-48 pl-4 text-left">
-              <Dot className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2" />
-              <CompetencyBody c={COMPETENCIES[2]} align="left" />
+            {/* Bottom-right corner — text to the right of the dot */}
+            <article className="absolute right-0 top-[82%] -translate-y-1/2 flex w-[44%] items-center gap-4">
+              <Dot className="shrink-0" />
+              <div className="flex-1 text-left">
+                <CompetencyBody c={COMPETENCIES[2]} align="left" />
+              </div>
             </article>
           </div>
 
@@ -342,8 +358,8 @@ function Home() {
               rel="noreferrer"
               className="card-soft flex flex-col items-center text-center transition hover:border-accent"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-cream shadow-inner">
-                <span className="font-serif text-lg tracking-wide">{a.initials}</span>
+              <div className="flex h-16 w-16 items-center justify-center">
+                <img src={a.logo} alt={`${a.name} logo`} className="max-h-14 max-w-14 object-contain" loading="lazy" />
               </div>
               <p className="mt-4 font-serif text-lg text-primary">{a.name}</p>
               <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{a.note}</p>
@@ -369,10 +385,10 @@ function Home() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {OFFERINGS.map((o) => (
-              <Link key={o.title} to="/work-with-me" hash={o.hash.slice(1)} className="card-soft block">
+              <Link key={o.title} to="/work-with-me/$slug" params={{ slug: o.slug }} className="card-soft block">
                 <h3 className="font-serif text-2xl text-primary">{o.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{o.blurb}</p>
-                <span className="mt-5 inline-block text-sm text-accent">Learn more →</span>
+                <span className="mt-5 inline-block text-sm text-accent">Find out more →</span>
               </Link>
             ))}
           </div>
