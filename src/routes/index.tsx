@@ -276,8 +276,8 @@ function Home() {
 
         {/* Triangle visualization */}
         <div className="relative mx-auto mt-24 max-w-6xl md:mt-32">
-          {/* Section heading clearance handled by mt-24/32 above */}
-          <div className="relative hidden h-[640px] md:block">
+          {/* Desktop: dots sit exactly at the triangle corners, text outside */}
+          <div className="relative hidden h-[560px] md:block">
             <svg
               aria-hidden
               className="pointer-events-none absolute inset-0 h-full w-full"
@@ -295,7 +295,7 @@ function Home() {
                 </radialGradient>
               </defs>
               <polygon
-                points="50,35 22,82 78,82"
+                points="50,40 18,88 82,88"
                 fill="url(#triFill)"
                 stroke="url(#triGrad)"
                 strokeWidth="1"
@@ -303,27 +303,23 @@ function Home() {
               />
             </svg>
 
-            {/* Top corner — text above the apex dot */}
-            <article className="absolute top-0 left-1/2 -translate-x-1/2 w-80 text-center">
+            {/* Top corner — text above the apex dot, dot sits at (50%, 40%) */}
+            <div className="absolute left-1/2 top-0 w-80 -translate-x-1/2 text-center">
               <CompetencyBody c={COMPETENCIES[0]} align="center" />
-              <Dot className="mx-auto mt-6" />
-            </article>
+            </div>
+            <Dot className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2" />
 
-            {/* Bottom-left corner — text to the left of the dot */}
-            <article className="absolute left-0 top-[82%] -translate-y-1/2 flex w-[44%] items-center gap-4">
-              <div className="flex-1 text-right">
-                <CompetencyBody c={COMPETENCIES[1]} align="right" />
-              </div>
-              <Dot className="shrink-0" />
-            </article>
+            {/* Bottom-left corner — dot at (18%, 88%), text to its left */}
+            <div className="absolute left-0 top-[88%] w-[34%] -translate-y-1/2 pr-6 text-right">
+              <CompetencyBody c={COMPETENCIES[1]} align="right" />
+            </div>
+            <Dot className="absolute left-[18%] top-[88%] -translate-x-1/2 -translate-y-1/2" />
 
-            {/* Bottom-right corner — text to the right of the dot */}
-            <article className="absolute right-0 top-[82%] -translate-y-1/2 flex w-[44%] items-center gap-4">
-              <Dot className="shrink-0" />
-              <div className="flex-1 text-left">
-                <CompetencyBody c={COMPETENCIES[2]} align="left" />
-              </div>
-            </article>
+            {/* Bottom-right corner — dot at (82%, 88%), text to its right */}
+            <div className="absolute right-0 top-[88%] w-[34%] -translate-y-1/2 pl-6 text-left">
+              <CompetencyBody c={COMPETENCIES[2]} align="left" />
+            </div>
+            <Dot className="absolute left-[82%] top-[88%] -translate-x-1/2 -translate-y-1/2" />
           </div>
 
           {/* Mobile: stacked cards */}
