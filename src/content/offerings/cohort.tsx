@@ -35,12 +35,12 @@ export function CohortContent() {
         from.
       </p>
       <p>
-        Alongside these guides, I will bring my own: years of professional expertise in climate
-        science and energy modelling, which means that this year begins with an unflinching and
-        honest look at where we actually are — what the science tells us, what the projections
-        show, and what that means for the choices available to us. Not to induce despair, but
-        because clarity — real clarity, without denial — is the foundation on which genuine hope
-        can be built.
+        Alongside these sources of insight, I bring my own: years of professional expertise in
+        climate science and energy modelling, as well as my own profound journey through climate
+        despair and burnout. This means that this year begins with a courageous and honest look
+        at where we actually are — what the science tells us about our future, and what that
+        means for the choices available to us. Not to induce despair, but because clarity — real
+        clarity, without denial — is the foundation on which genuine hope can be built.
       </p>
 
       <h2 className="mt-10 font-serif text-2xl text-primary">How it works</h2>

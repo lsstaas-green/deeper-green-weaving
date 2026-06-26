@@ -16,8 +16,8 @@ export function ActiveHopeContent() {
       <p>
         The Work That Reconnects was developed over four decades by eco-philosopher and Buddhist
         scholar Joanna Macy, and it offers something precious: a tried and tested, deeply human
-        framework for feeling all of it — and finding, on the other side of that feeling, what we
-        are all looking for: meaning.
+        framework for navigating our times — and finding that feeling that we are all looking
+        for: meaning.
       </p>
       <p>
         Drawing on systems theory, deep ecology, and Buddhist thought, an Active Hope workshop
@@ -55,9 +55,8 @@ export function ActiveHopeContent() {
 
       <h2 className="mt-10 font-serif text-2xl text-primary">How I offer this work</h2>
       <p>
-        I offer Work That Reconnects workshops on demand, tailored to the needs of the group —
-        whether that is a team, a community, an organisation, or a gathering of individuals
-        navigating this time.
+        I offer workshops on demand, tailored to the needs of the group — whether that is a team,
+        a community, an organisation, or a gathering of individuals navigating this time.
       </p>
       <p>Workshops can take many forms:</p>
       <ul className="ml-5 list-disc space-y-3">

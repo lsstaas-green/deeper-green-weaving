@@ -104,6 +104,44 @@ const MEDIA = [
   },
 ];
 
+const PODCASTS = [
+  {
+    title: "Outrage & Optimism",
+    host: "with Christiana Figueres",
+    href: "https://www.outrageandoptimism.org/",
+  },
+  {
+    title: "The Nature Of",
+    host: "with Willow Defebaugh",
+    href: "https://atmos.earth/tag/the-nature-of-podcast/",
+  },
+  {
+    title: "Stand in the Circle",
+    host: "with Rosalind Watts",
+    href: "https://www.acceptanceandcommitment.co.uk/stand-in-the-circle",
+  },
+  {
+    title: "We Are The Great Turning",
+    host: "with Joanna Macy & Jess Serrante",
+    href: "https://www.wearethegreatturning.com/",
+  },
+  {
+    title: "The Way Out Is In",
+    host: "by Plum Village",
+    href: "https://plumvillage.org/podcast/the-way-out-is-in",
+  },
+  {
+    title: "The Great Simplification",
+    host: "with Nate Hagens",
+    href: "https://www.thegreatsimplification.com/",
+  },
+  {
+    title: "Accidental Gods",
+    host: "with Manda Scott",
+    href: "https://accidentalgods.life/",
+  },
+];
+
 function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -212,6 +250,33 @@ function WritingPage() {
                   <h3 className="mt-2 font-serif text-xl leading-snug text-primary group-hover:text-accent">
                     {m.title}
                   </h3>
+                </div>
+                <span className="shrink-0 text-sm text-accent">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-20">
+        <h2 className="font-serif text-2xl text-primary">Podcasts</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Voices keeping me company on the path.
+        </p>
+        <ul className="mt-8 divide-y divide-border border-y border-border">
+          {PODCASTS.map((p) => (
+            <li key={p.title}>
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-baseline justify-between gap-6 py-6 transition hover:bg-secondary/40"
+              >
+                <div>
+                  <h3 className="font-serif text-xl leading-snug text-primary group-hover:text-accent">
+                    {p.title}
+                  </h3>
+                  <p className="mt-1 text-sm italic text-muted-foreground">{p.host}</p>
                 </div>
                 <span className="shrink-0 text-sm text-accent">→</span>
               </a>
