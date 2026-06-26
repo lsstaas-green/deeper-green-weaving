@@ -257,6 +257,33 @@ function WritingPage() {
           ))}
         </ul>
       </section>
+
+      <section className="mt-20">
+        <h2 className="font-serif text-2xl text-primary">Podcasts</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Voices keeping me company on the path.
+        </p>
+        <ul className="mt-8 divide-y divide-border border-y border-border">
+          {PODCASTS.map((p) => (
+            <li key={p.title}>
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-baseline justify-between gap-6 py-6 transition hover:bg-secondary/40"
+              >
+                <div>
+                  <h3 className="font-serif text-xl leading-snug text-primary group-hover:text-accent">
+                    {p.title}
+                  </h3>
+                  <p className="mt-1 text-sm italic text-muted-foreground">{p.host}</p>
+                </div>
+                <span className="shrink-0 text-sm text-accent">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
