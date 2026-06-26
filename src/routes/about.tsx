@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+
 import storyMountain from "@/assets/story/leonie-mountain.jpg";
 import storySpeaking from "@/assets/story/leonie-speaking.jpg";
 import storyTree from "@/assets/story/leonie-tree.jpg";
@@ -33,20 +33,6 @@ function AboutPage() {
         </h1>
       </header>
 
-      <nav className="mt-10 flex flex-wrap gap-2 text-sm">
-        {[
-          ["my-story", "My Story"],
-          ["faq", "FAQ"],
-        ].map(([id, label]) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            className="rounded-full border border-border bg-card px-4 py-2 text-foreground/80 transition hover:border-primary hover:text-primary"
-          >
-            {label}
-          </a>
-        ))}
-      </nav>
 
       {/* MY STORY */}
       <section id="my-story" className="mt-20 scroll-mt-28">
@@ -138,40 +124,7 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="mt-28 scroll-mt-28">
-        <h2 className="font-serif text-3xl md:text-4xl text-primary">FAQ</h2>
-        <div className="mt-10 space-y-14">
-          {FAQ_SECTIONS.map((s) => (
-            <div key={s.heading}>
-              <h3 className="eyebrow">{s.heading}</h3>
-              <div className="mt-5 divide-y divide-border border-y border-border">
-                {s.items.map((item) => (
-                  <FaqItem key={item.q} q={item.q} a={item.a} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
 
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <button
-      type="button"
-      onClick={() => setOpen((v) => !v)}
-      className="block w-full py-5 text-left"
-      aria-expanded={open}
-    >
-      <div className="flex items-start justify-between gap-6">
-        <span className="font-serif text-lg text-primary">{q}</span>
-        <span className="mt-1 shrink-0 text-accent">{open ? "−" : "+"}</span>
-      </div>
-      {open && <p className="mt-3 text-sm text-foreground/80 leading-relaxed">{a}</p>}
-    </button>
-  );
-}
