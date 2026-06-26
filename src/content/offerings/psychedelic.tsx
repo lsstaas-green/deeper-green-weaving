@@ -43,8 +43,16 @@ export function PsychedelicContent() {
         ultimately depends on how they become woven into the fabric of everyday life. I support
         people in making sense of their experiences across multiple dimensions of life — including
         cognition, emotions, the body, relationships, values, behaviour, creativity, and
-        connection to the wider world, a framework developed by Synthesis teacher Daan Keiman.
-        Particular attention is given to experiences that feel confusing, overwhelming, or
+        connection to the wider world, a framework developed by Synthesis teacher{" "}
+        <a
+          href="https://www.audiodharma.org/teacher/467"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4 hover:text-accent"
+        >
+          Daan Keiman
+        </a>
+        . Particular attention is given to experiences that feel confusing, overwhelming, or
         difficult to understand, approaching them with compassion rather than pathologization.
       </p>
       <p>

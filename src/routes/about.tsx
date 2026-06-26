@@ -22,47 +22,6 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const FAQ_SECTIONS = [
-  {
-    heading: "On the climate crisis and the state of the world",
-    items: [
-      {
-        q: "What do you mean when you say the climate crisis is a crisis of disconnection?",
-        a: "[Answer coming soon — Leonie will fill this in.]",
-      },
-      {
-        q: "Is collapse really inevitable?",
-        a: "[Answer coming soon — Leonie will fill this in.]",
-      },
-    ],
-  },
-  {
-    heading: "On practices for reconnection",
-    items: [
-      {
-        q: "What is Active Hope, and how is it different from optimism?",
-        a: "[Answer coming soon — Leonie will fill this in.]",
-      },
-      {
-        q: "Where do I begin if I feel paralysed by climate grief?",
-        a: "[Answer coming soon — Leonie will fill this in.]",
-      },
-    ],
-  },
-  {
-    heading: "On psychedelic healing",
-    items: [
-      {
-        q: "Is it ethical to use psychedelics to cope with climate grief?",
-        a: "[Answer coming soon — Leonie will fill this in.]",
-      },
-      {
-        q: "What does it mean to work with psychedelics legally?",
-        a: "[Answer coming soon — Leonie will fill this in.]",
-      },
-    ],
-  },
-];
 
 function AboutPage() {
   return (
