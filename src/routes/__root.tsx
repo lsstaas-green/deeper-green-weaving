@@ -138,19 +138,21 @@ function SiteHeader() {
                   {item.label}
                 </Link>
                 {isWriting && writingHover && (
-                  <div className="absolute left-0 top-full z-50 mt-3 w-72 rounded-xl border border-border bg-card p-4 shadow-xl sm:left-1/2 sm:-translate-x-1/2">
-                    <p className="font-serif text-base text-primary">A Deeper Green</p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Essays on climate, consciousness and reconnection.
-                    </p>
-                    <a
-                      href="https://leoniestaas.substack.com/subscribe"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-xs text-primary-foreground"
-                    >
-                      Subscribe on Substack
-                    </a>
+                  <div className="absolute left-0 top-full z-50 w-72 pt-3 sm:left-1/2 sm:-translate-x-1/2">
+                    <div className="rounded-xl border border-border bg-card p-4 shadow-xl">
+                      <p className="font-serif text-base text-primary">A Deeper Green</p>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Essays on climate, consciousness and reconnection.
+                      </p>
+                      <a
+                        href="https://leoniestaas.substack.com/subscribe"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2 text-xs text-primary-foreground"
+                      >
+                        Subscribe on Substack
+                      </a>
+                    </div>
                   </div>
                 )}
               </div>
