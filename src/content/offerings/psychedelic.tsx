@@ -11,11 +11,20 @@ export function PsychedelicContent() {
 
       <h2 className="mt-10 font-serif text-2xl text-primary">My Approach</h2>
       <p>
-        My approach is informed by the PsyGaia Framework, an ecological understanding of
-        psychedelic experience developed through interdisciplinary research in systems theory,
-        enactive cognition, and biosemiotics. Rather than viewing healing as something that
-        happens solely within an isolated individual, the PsyGaia perspective understands
-        wellbeing as emerging through relationship, connection, and participation in life.
+        My approach is informed by the{" "}
+        <a
+          href="https://psygaia.org/our-research/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4 hover:text-accent"
+        >
+          PsyGaia Framework
+        </a>
+        , an ecological understanding of psychedelic experience developed through
+        interdisciplinary research in systems theory, enactive cognition, and biosemiotics.
+        Rather than viewing healing as something that happens solely within an isolated
+        individual, the PsyGaia perspective understands wellbeing as emerging through
+        relationship, connection, and participation in life.
       </p>
 
       <h2 className="mt-10 font-serif text-2xl text-primary">Preparation</h2>
