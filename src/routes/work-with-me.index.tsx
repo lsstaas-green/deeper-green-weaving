@@ -21,13 +21,13 @@ const OFFERINGS = [
     slug: "active-hope",
     title: "Active Hope Workshop",
     body:
-      "Find support, connection and inspiration in these difficult times through the powerful group practices of \"The Work That Reconnects\", developed by eco-philosopher Joanna Macy. Together, we move through processes of gratitude, grief, expanded identity, to take us out of overwhelm and into a healthy sense of belonging.",
+      "Find support, connection and inspiration in these difficult times through the powerful group practices of \"The Work That Reconnects\", developed by eco-philosopher Joanna Macy. Together, we move through processes of gratitude, grief, and expanded identity, to take us out of overwhelm and into a grounded sense of belonging.",
   },
   {
     slug: "mentorship",
     title: "1:1 Mentorship",
     body:
-      "Personal accompaniment for those navigating fear, sadness, exhaustion, or a sense that the old map has stopped working.",
+      "Personal accompaniment for those navigating fear, sadness, or a sense that the old map has stopped working.",
   },
   {
     slug: "cohort",
@@ -52,8 +52,7 @@ function WorkPage() {
           How can I help you?
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Four offerings, all rooted in the same conviction: that the personal and the
-          planetary are one piece of work.
+          Offerings for individuals and groups.
         </p>
       </header>
 

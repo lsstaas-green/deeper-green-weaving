@@ -237,14 +237,8 @@ function Home() {
           height={820}
           className="absolute inset-0 h-full w-full object-cover object-right"
         />
-        {/* Soft fade on the edges */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55)_100%)]" aria-hidden />
-        {/* Overall darken for readability */}
-        <div className="absolute inset-0 bg-black/45" aria-hidden />
-        {/* Left-side darker gradient under the heading and buttons */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" aria-hidden />
-        {/* Stronger fade at the very bottom under the buttons */}
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 via-black/30 to-transparent" aria-hidden />
+        {/* Left-side soft gradient for text legibility — keep the image bright */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" aria-hidden />
 
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
           <p className="eyebrow text-cream/85">Leonie Staas</p>
@@ -267,7 +261,7 @@ function Home() {
 
       {/* Triangle of competencies */}
       <section className="container-narrow py-24 md:py-32">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="relative z-10 mx-auto max-w-2xl text-center">
           <p className="eyebrow">A holistic response to a systemic illness</p>
           <h2 className="mt-4 font-serif text-3xl md:text-4xl text-primary">
             My work lives at the intersection of three unique perspectives.
@@ -275,9 +269,23 @@ function Home() {
         </div>
 
         {/* Triangle visualization */}
-        <div className="relative mx-auto mt-24 max-w-6xl md:mt-32">
-          {/* Desktop: dots sit exactly at the triangle corners, text outside */}
-          <div className="relative hidden h-[560px] md:block">
+        <div className="relative mx-auto mt-16 max-w-6xl md:mt-20">
+          {/* Desktop */}
+          <div className="relative hidden h-[640px] md:block">
+            {/* Top text — above apex */}
+            <div className="absolute left-1/2 top-0 w-[36%] -translate-x-1/2 text-center">
+              <CompetencyBody c={COMPETENCIES[0]} align="center" />
+            </div>
+            {/* Bottom-left text — to the left of the bottom-left corner */}
+            <div className="absolute left-0 top-[62%] w-[30%] text-right">
+              <CompetencyBody c={COMPETENCIES[1]} align="right" />
+            </div>
+            {/* Bottom-right text — to the right of the bottom-right corner */}
+            <div className="absolute right-0 top-[62%] w-[30%] text-left">
+              <CompetencyBody c={COMPETENCIES[2]} align="left" />
+            </div>
+
+            {/* Triangle in the centre between the three text blocks */}
             <svg
               aria-hidden
               className="pointer-events-none absolute inset-0 h-full w-full"
@@ -295,7 +303,7 @@ function Home() {
                 </radialGradient>
               </defs>
               <polygon
-                points="50,40 18,88 82,88"
+                points="50,42 36,90 64,90"
                 fill="url(#triFill)"
                 stroke="url(#triGrad)"
                 strokeWidth="1"
@@ -303,23 +311,10 @@ function Home() {
               />
             </svg>
 
-            {/* Top corner — text above the apex dot, dot sits at (50%, 40%) */}
-            <div className="absolute left-1/2 top-0 w-80 -translate-x-1/2 text-center">
-              <CompetencyBody c={COMPETENCIES[0]} align="center" />
-            </div>
-            <Dot className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2" />
-
-            {/* Bottom-left corner — dot at (18%, 88%), text to its left */}
-            <div className="absolute left-0 top-[88%] w-[34%] -translate-y-1/2 pr-6 text-right">
-              <CompetencyBody c={COMPETENCIES[1]} align="right" />
-            </div>
-            <Dot className="absolute left-[18%] top-[88%] -translate-x-1/2 -translate-y-1/2" />
-
-            {/* Bottom-right corner — dot at (82%, 88%), text to its right */}
-            <div className="absolute right-0 top-[88%] w-[34%] -translate-y-1/2 pl-6 text-left">
-              <CompetencyBody c={COMPETENCIES[2]} align="left" />
-            </div>
-            <Dot className="absolute left-[82%] top-[88%] -translate-x-1/2 -translate-y-1/2" />
+            {/* Dots exactly at the three corners */}
+            <Dot className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2" />
+            <Dot className="absolute left-[36%] top-[90%] -translate-x-1/2 -translate-y-1/2" />
+            <Dot className="absolute left-[64%] top-[90%] -translate-x-1/2 -translate-y-1/2" />
           </div>
 
           {/* Mobile: stacked cards */}
@@ -328,15 +323,13 @@ function Home() {
               <CompetencyBody c={COMPETENCIES[0]} align="center" />
               <Dot className="mx-auto mt-6" />
             </article>
-
-            <article className="text-left">
-              <CompetencyBody c={COMPETENCIES[1]} align="right" />
+            <article>
+              <CompetencyBody c={COMPETENCIES[1]} align="left" />
               <Dot className="mx-auto mt-6" />
             </article>
-
-            <article className="text-left">
-              <Dot className="mx-auto mt-6" />
+            <article>
               <CompetencyBody c={COMPETENCIES[2]} align="left" />
+              <Dot className="mx-auto mt-6" />
             </article>
           </div>
         </div>
