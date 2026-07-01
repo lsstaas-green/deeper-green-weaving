@@ -239,8 +239,9 @@ function Home() {
           height={820}
           className="absolute inset-0 h-full w-full object-cover object-right"
         />
-        {/* Left-side soft gradient for text legibility — keep the image bright */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" aria-hidden />
+        {/* Softer green wash for legibility while keeping the image bright */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/45 via-primary/15 to-transparent" aria-hidden />
+
 
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
           <p className="eyebrow text-cream/85">Leonie Staas</p>
