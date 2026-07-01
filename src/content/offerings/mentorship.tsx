@@ -39,10 +39,11 @@ export function MentorshipContent() {
 
       <h2 className="mt-10 font-serif text-2xl text-primary">My approach</h2>
       <p>
-        I take a deeply practical and embodied approach to mentorship, rooted in a conviction I
-        hold firmly: you already know what the next right step is. The wisdom is there. What gets
-        in the way is the noise — the fear, the conditioning, the stories we have inherited about
-        who we should be and what we should want.
+        I take a practical and embodied approach to mentorship, because I believe that you already
+        know what the next right step is. The wisdom is there. What gets in the way is the noise —
+        the fear, the conditioning, the stories we have inherited about who we should be and what
+        we should want.
+
       </p>
       <p>
         My role is not to tell you what to do. It is to offer you the questions, the practices,
