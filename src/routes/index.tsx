@@ -42,7 +42,7 @@ const COMPETENCIES = [
     points: [
       { text: "Certified Psychedelic Practitioner, Synthesis Institute", href: "https://www.synthesisinstitute.com/" },
       { text: "Certified Yin Yoga Teacher" },
-      { text: "Meditation and embodiment practices" },
+      { text: "Long-term engagement with reflective and meditative disciplines and embodiment practices" },
     ],
   },
   {
@@ -51,7 +51,8 @@ const COMPETENCIES = [
     points: [
       { text: "Applied Eco-Dharma" },
       { text: "Group work for climate emotions" },
-      { text: "1:1 work on navigating collapse" },
+      { text: "1:1 work on navigating times of systemic change and crisis" },
+
     ],
   },
 ];
