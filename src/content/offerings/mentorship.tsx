@@ -16,7 +16,8 @@ export function MentorshipContent() {
       <p>
         How do I stay sane — and find happiness — when the world feels like it is falling apart?
         How do I live a life that feels meaningful without either averting my eyes, or burning out
-        trying to save everything? How do I untangle myself from a system whose values I no longer
+        trying to save the world? How do I untangle myself from a system whose values I no longer
+
         share, without losing everything I have built? How do I meet this exhaustion and this fear
         without being swallowed by them?
       </p>
