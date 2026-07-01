@@ -42,7 +42,7 @@ const COMPETENCIES = [
     points: [
       { text: "Certified Psychedelic Practitioner, Synthesis Institute", href: "https://www.synthesisinstitute.com/" },
       { text: "Certified Yin Yoga Teacher" },
-      { text: "Meditation and embodiment practices" },
+      { text: "Long-term engagement with reflective and meditative disciplines and embodiment practices" },
     ],
   },
   {
@@ -51,7 +51,8 @@ const COMPETENCIES = [
     points: [
       { text: "Applied Eco-Dharma" },
       { text: "Group work for climate emotions" },
-      { text: "1:1 work on navigating collapse" },
+      { text: "1:1 work on navigating times of systemic change and crisis" },
+
     ],
   },
 ];
@@ -63,37 +64,38 @@ const OFFERINGS = [
   { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and a path to legal psychedelic support.", slug: "psychedelic" },
 ];
 
-import ieaLogo from "@/assets/logos/iea.asset.json";
-import psygaiaLogo from "@/assets/logos/psygaia.asset.json";
-import psychedelicareLogo from "@/assets/logos/psychedelicare.asset.json";
-import wtrLogo from "@/assets/logos/wtr.asset.json";
+import ieaLogo from "@/assets/logos/iea.png";
+import psygaiaLogo from "@/assets/logos/psygaia.png";
+import psychedelicareLogo from "@/assets/logos/psychedelicare.png";
+import wtrLogo from "@/assets/logos/wtr.webp";
 
 const AFFILIATIONS = [
   {
     name: "International Energy Agency",
     note: "Former — World Energy Outlook",
-    logo: ieaLogo.url,
+    logo: ieaLogo,
     href: "https://www.iea.org/commentaries/do-we-need-to-change-our-behaviour-to-reach-net-zero-by-2050",
   },
   {
     name: "PsyGaia",
     note: "Climate and Active Hope",
-    logo: psygaiaLogo.url,
+    logo: psygaiaLogo,
     href: "https://psygaia.org/about/",
   },
   {
     name: "PsychedeliCare",
     note: "European Citizens' Movement",
-    logo: psychedelicareLogo.url,
+    logo: psychedelicareLogo,
     href: "https://psychedelicare.eu/",
   },
   {
     name: "The Work That Reconnects Network",
     note: "Facilitator community",
-    logo: wtrLogo.url,
+    logo: wtrLogo,
     href: "https://workthatreconnects.org/what-is-the-work-that-reconnects/",
   },
 ];
+
 
 const ARTICLES = [
   {
@@ -237,8 +239,9 @@ function Home() {
           height={820}
           className="absolute inset-0 h-full w-full object-cover object-right"
         />
-        {/* Left-side soft gradient for text legibility — keep the image bright */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent" aria-hidden />
+        {/* Softer green wash for legibility while keeping the image bright */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/45 via-primary/15 to-transparent" aria-hidden />
+
 
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
           <p className="eyebrow text-cream/85">Leonie Staas</p>

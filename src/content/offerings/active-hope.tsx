@@ -4,8 +4,8 @@ export function ActiveHopeContent() {
       <p className="lead font-serif text-xl text-primary">
         Find support, connection and inspiration in these difficult times through the powerful
         group practices of "The Work That Reconnects", developed by eco-philosopher Joanna Macy.
-        Together, we move through processes of gratitude, grief, expanded identity, to take us
-        out of overwhelm and into a healthy sense of belonging.
+        Together, we move through processes of gratitude, grief, and expanded identity, to take
+        us out of overwhelm and into a healthy sense of belonging.
       </p>
       <p>
         We are living through an extraordinarily difficult time, both heartbreaking and scary. The
@@ -16,15 +16,32 @@ export function ActiveHopeContent() {
       <p>
         The Work That Reconnects was developed over four decades by eco-philosopher and Buddhist
         scholar Joanna Macy, and it offers something precious: a tried and tested, deeply human
-        framework for navigating our times — and finding that feeling that we are all looking
-        for: meaning.
+        framework for navigating our times — and finding what we are all looking for: meaning.
       </p>
       <p>
-        Drawing on systems theory, deep ecology, and Buddhist thought, an Active Hope workshop
-        guides participants through what Joanna Macy called the Spiral of the Work: four stages
-        that together form a complete journey through which we learn to cycle, over and over. This
-        will keep us balanced.
+        <a
+          href="https://activehope.info/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4 hover:text-accent"
+        >
+          Active Hope
+        </a>{" "}
+        is the central orientation or practice that emerges from the Work That Reconnects.
+        Drawing on systems theory, deep ecology, and Buddhist thought, an{" "}
+        <a
+          href="https://activehope.info/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-4 hover:text-accent"
+        >
+          Active Hope
+        </a>{" "}
+        workshop guides participants through what Joanna Macy called the Spiral of the Work: four
+        stages that together form a complete journey through which we learn to cycle, over and
+        over. This will keep us balanced.
       </p>
+
 
       <h2 className="mt-10 font-serif text-2xl text-primary">The four movements of the Spiral</h2>
       <ul className="ml-5 list-disc space-y-3">

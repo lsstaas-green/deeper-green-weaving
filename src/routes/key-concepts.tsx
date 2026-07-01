@@ -183,7 +183,21 @@ const SECTIONS: Section[] = [
         term: "Active Hope",
         searchText:
           "A practice, not a feeling. Developed by Joanna Macy and Chris Johnstone, Active Hope is the decision to act in alignment with our values regardless of the outcome — not because we are certain things will get better, but because integrity, love, and meaning do not require a guaranteed future, but are in themselves a guarantee of more fulfillment in life. It is the realization that there are infinite possible futures, and every little choice moves the needle. It is a hope that doesn't depend on optimism, but on tending to our sense of connection.",
-        body: "A practice, not a feeling. Developed by Joanna Macy and Chris Johnstone, Active Hope is the decision to act in alignment with our values regardless of the outcome — not because we are certain things will get better, but because integrity, love, and meaning do not require a guaranteed future, but are in themselves a guarantee of more fulfillment in life. It is the realization that there are infinite possible futures, and every little choice moves the needle. It is a hope that doesn't depend on optimism, but on tending to our sense of connection.",
+        body: (
+          <>
+            A practice, not a feeling. Developed by Joanna Macy and Chris Johnstone,{" "}
+            <a
+              href="https://activehope.info/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 hover:text-accent"
+            >
+              Active Hope
+            </a>{" "}
+            is the decision to act in alignment with our values regardless of the outcome — not because we are certain things will get better, but because integrity, love, and meaning do not require a guaranteed future, but are in themselves a guarantee of more fulfillment in life. It is the realization that there are infinite possible futures, and every little choice moves the needle. It is a hope that doesn't depend on optimism, but on tending to our sense of connection.
+          </>
+        ),
+
       },
       {
         term: "The Work That Reconnects",

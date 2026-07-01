@@ -9,13 +9,15 @@ export function MentorshipContent() {
       </p>
       <p>
         I came to this work not only as a climate professional or an activist, but as a young
-        woman who spent years quietly asking the same questions that many of my peers are
+        woman who spent years diving deep into the same questions that many of my peers are
         struggling with.
+
       </p>
       <p>
         How do I stay sane — and find happiness — when the world feels like it is falling apart?
         How do I live a life that feels meaningful without either averting my eyes, or burning out
-        trying to save everything? How do I untangle myself from a system whose values I no longer
+        trying to save the world? How do I untangle myself from a system whose values I no longer
+
         share, without losing everything I have built? How do I meet this exhaustion and this fear
         without being swallowed by them?
       </p>
@@ -37,10 +39,11 @@ export function MentorshipContent() {
 
       <h2 className="mt-10 font-serif text-2xl text-primary">My approach</h2>
       <p>
-        I take a deeply practical and embodied approach to mentorship, rooted in a conviction I
-        hold firmly: you already know what the next right step is. The wisdom is there. What gets
-        in the way is the noise — the fear, the conditioning, the stories we have inherited about
-        who we should be and what we should want.
+        I take a practical and embodied approach to mentorship, because I believe that you already
+        know what the next right step is. The wisdom is there. What gets in the way is the noise —
+        the fear, the conditioning, the stories we have inherited about who we should be and what
+        we should want.
+
       </p>
       <p>
         My role is not to tell you what to do. It is to offer you the questions, the practices,
