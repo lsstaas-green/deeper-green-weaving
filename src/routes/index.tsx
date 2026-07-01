@@ -64,37 +64,38 @@ const OFFERINGS = [
   { title: "Psychedelic Healing Work", blurb: "Preparation, integration, and a path to legal psychedelic support.", slug: "psychedelic" },
 ];
 
-import ieaLogo from "@/assets/logos/iea.asset.json";
-import psygaiaLogo from "@/assets/logos/psygaia.asset.json";
-import psychedelicareLogo from "@/assets/logos/psychedelicare.asset.json";
-import wtrLogo from "@/assets/logos/wtr.asset.json";
+import ieaLogo from "@/assets/logos/iea.png";
+import psygaiaLogo from "@/assets/logos/psygaia.png";
+import psychedelicareLogo from "@/assets/logos/psychedelicare.png";
+import wtrLogo from "@/assets/logos/wtr.webp";
 
 const AFFILIATIONS = [
   {
     name: "International Energy Agency",
     note: "Former — World Energy Outlook",
-    logo: ieaLogo.url,
+    logo: ieaLogo,
     href: "https://www.iea.org/commentaries/do-we-need-to-change-our-behaviour-to-reach-net-zero-by-2050",
   },
   {
     name: "PsyGaia",
     note: "Climate and Active Hope",
-    logo: psygaiaLogo.url,
+    logo: psygaiaLogo,
     href: "https://psygaia.org/about/",
   },
   {
     name: "PsychedeliCare",
     note: "European Citizens' Movement",
-    logo: psychedelicareLogo.url,
+    logo: psychedelicareLogo,
     href: "https://psychedelicare.eu/",
   },
   {
     name: "The Work That Reconnects Network",
     note: "Facilitator community",
-    logo: wtrLogo.url,
+    logo: wtrLogo,
     href: "https://workthatreconnects.org/what-is-the-work-that-reconnects/",
   },
 ];
+
 
 const ARTICLES = [
   {
