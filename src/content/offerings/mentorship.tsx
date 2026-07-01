@@ -9,8 +9,9 @@ export function MentorshipContent() {
       </p>
       <p>
         I came to this work not only as a climate professional or an activist, but as a young
-        woman who spent years quietly asking the same questions that many of my peers are
+        woman who spent years diving deep into the same questions that many of my peers are
         struggling with.
+
       </p>
       <p>
         How do I stay sane — and find happiness — when the world feels like it is falling apart?
