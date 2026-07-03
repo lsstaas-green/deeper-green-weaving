@@ -29,7 +29,7 @@ function AboutPage() {
       <header className="max-w-2xl">
         <p className="eyebrow">About</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl text-primary">
-          My story, your story, and the questions in between.
+          The path to reconnection begins by not looking away
         </h1>
       </header>
 
