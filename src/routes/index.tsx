@@ -237,11 +237,10 @@ function Home() {
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
           height={820}
-          className="absolute inset-0 h-full w-full object-cover object-right brightness-[1.18] saturate-[1.08] contrast-[0.98]"
+          className="absolute inset-0 h-full w-full object-cover object-[100%_18%] brightness-[1.35] saturate-[1.15] contrast-[0.96] md:object-right"
         />
-        {/* Light green wash for legibility while keeping the image close to the brighter reference */}
-        <div className="absolute inset-0 bg-cream/10 mix-blend-screen" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/32 via-primary/8 to-transparent" aria-hidden />
+        <div className="absolute inset-0 bg-cream/15 mix-blend-screen" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/22 via-primary/5 to-transparent" aria-hidden />
 
 
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
@@ -249,7 +248,7 @@ function Home() {
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
             What if healing ourselves and healing our planet were never two separate journeys?
           </h1>
-          <p className="mt-6 max-w-xl text-base text-cream/85 sm:text-lg">
+          <p className="mt-6 text-xs text-cream/85 sm:text-sm md:whitespace-nowrap md:text-base lg:text-lg">
             Climate Professional · Active Hope Facilitator · Psychedelic Practitioner · Writer
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
