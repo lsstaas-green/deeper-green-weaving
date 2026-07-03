@@ -29,7 +29,7 @@ function AboutPage() {
       <header className="max-w-2xl">
         <p className="eyebrow">About</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl text-primary">
-          My story, your story, and the questions in between.
+          The path to reconnection begins by not looking away
         </h1>
       </header>
 
@@ -93,17 +93,20 @@ function AboutPage() {
               Chancellery.
             </p>
             <p>
-              Climate anxiety, ecological grief, and ultimately burnout brought this work
-              to a full stop. It also opened her to a profound exploration of mind,
-              consciousness, and what it means to truly heal. Healing, she discovered, is
-              not an individual job — it is a planetary one. And it requires
-              reconnection: to ourselves, to each other, and most of all to nature.
+              Fears of the future, pain for the state of the world, utter exhaustion, and
+              ultimately burnout brought this work to a full stop. It also opened her to a
+              profound exploration of mind, consciousness, and what it means to truly
+              heal. Healing, she discovered, is not an individual endeavour — it is a
+              collective one, and can only be achieved in community. Healing requires
+              reconnection: to our own inner worlds, to each other, and ultimately to the
+              forgotten mystery of life itself.
             </p>
             <p>
               What reconnected her were diverse practices, from meditation to singing,
-              diverse wisdom traditions, from Buddhism to Taoist thought, and diverse
-              philosophies, from deep ecology to systems theory. Most of all, it was the
-              lived experience of connection through the intentional use of psychedelics.
+              diverse contemplative traditions, from Buddhism to Taoist thought, and
+              diverse philosophies, from deep ecology to systems theory. Most of all, it
+              was the lived experience of connection through the intentional use of
+              psychedelics.
             </p>
             <p>
               Leonie is now a certified psychedelic facilitator through the Synthesis

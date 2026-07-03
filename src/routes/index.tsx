@@ -237,11 +237,10 @@ function Home() {
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
           height={820}
-          className="absolute inset-0 h-full w-full object-cover object-right brightness-[1.18] saturate-[1.08] contrast-[0.98]"
+          className="absolute inset-0 h-full w-full object-cover object-[100%_18%] brightness-[1.35] saturate-[1.15] contrast-[0.96] md:object-right"
         />
-        {/* Light green wash for legibility while keeping the image close to the brighter reference */}
-        <div className="absolute inset-0 bg-cream/10 mix-blend-screen" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/32 via-primary/8 to-transparent" aria-hidden />
+        <div className="absolute inset-0 bg-cream/15 mix-blend-screen" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/22 via-primary/5 to-transparent" aria-hidden />
 
 
         <div className="relative container-narrow flex min-h-[78vh] flex-col items-start justify-end pb-20 pt-40 text-cream">
@@ -249,7 +248,7 @@ function Home() {
           <h1 className="mt-5 max-w-3xl text-balance font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
             What if healing ourselves and healing our planet were never two separate journeys?
           </h1>
-          <p className="mt-6 max-w-xl text-base text-cream/85 sm:text-lg">
+          <p className="mt-6 text-xs text-cream/85 sm:text-sm md:whitespace-nowrap md:text-base lg:text-lg">
             Climate Professional · Active Hope Facilitator · Psychedelic Practitioner · Writer
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -449,12 +448,12 @@ function Home() {
               Media & Speaking Inquiries
             </a>
             <a
-              href="https://instagram.com/a_deeper_green"
+              href="https://instagram.com/leonie_staas"
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm text-primary underline-offset-4 hover:underline"
             >
-              <InstagramIcon /> @a_deeper_green
+              <InstagramIcon /> @leonie_staas
             </a>
           </div>
 
@@ -505,11 +504,15 @@ function CompetencyBody({
       <ul
         className={
           "mt-4 space-y-2 text-sm text-foreground/80 " +
-          (align === "right" ? "md:[&_li]:flex-row-reverse md:[&_li]:text-right" : "")
+          (align === "center"
+            ? "mx-auto inline-block text-left"
+            : align === "right"
+            ? "md:[&_li]:flex-row-reverse md:[&_li]:text-right"
+            : "")
         }
       >
         {c.points.map((p) => (
-          <li key={p.text} className="flex items-start gap-2">
+          <li key={p.text} className="flex items-start gap-2 text-left">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             {p.href ? (
               <a href={p.href} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
