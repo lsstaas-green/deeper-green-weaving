@@ -104,43 +104,6 @@ const MEDIA = [
   },
 ];
 
-const PODCASTS = [
-  {
-    title: "Outrage & Optimism",
-    host: "with Christiana Figueres",
-    href: "https://www.outrageandoptimism.org/",
-  },
-  {
-    title: "The Nature Of",
-    host: "with Willow Defebaugh",
-    href: "https://atmos.earth/tag/the-nature-of-podcast/",
-  },
-  {
-    title: "Stand in the Circle",
-    host: "with Rosalind Watts",
-    href: "https://www.acceptanceandcommitment.co.uk/stand-in-the-circle",
-  },
-  {
-    title: "We Are The Great Turning",
-    host: "with Joanna Macy & Jess Serrante",
-    href: "https://www.wearethegreatturning.com/",
-  },
-  {
-    title: "The Way Out Is In",
-    host: "by Plum Village",
-    href: "https://plumvillage.org/podcast/the-way-out-is-in",
-  },
-  {
-    title: "The Great Simplification",
-    host: "with Nate Hagens",
-    href: "https://www.thegreatsimplification.com/",
-  },
-  {
-    title: "Accidental Gods",
-    host: "with Manda Scott",
-    href: "https://accidentalgods.life/",
-  },
-];
 
 function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
