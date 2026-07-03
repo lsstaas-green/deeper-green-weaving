@@ -449,12 +449,12 @@ function Home() {
               Media & Speaking Inquiries
             </a>
             <a
-              href="https://instagram.com/a_deeper_green"
+              href="https://instagram.com/leonie_staas"
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm text-primary underline-offset-4 hover:underline"
             >
-              <InstagramIcon /> @a_deeper_green
+              <InstagramIcon /> @leonie_staas
             </a>
           </div>
 

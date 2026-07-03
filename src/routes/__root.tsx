@@ -174,18 +174,18 @@ function SiteFooter() {
             At the intersection of personal and planetary healing.
           </p>
           <a
-            href="https://instagram.com/a_deeper_green"
+            href="https://instagram.com/leonie_staas"
             target="_blank"
             rel="noreferrer"
             className="mt-5 inline-flex items-center gap-2 text-sm text-primary underline-offset-4 hover:underline"
-            aria-label="Instagram @a_deeper_green"
+            aria-label="Instagram @leonie_staas"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <rect x="3" y="3" width="18" height="18" rx="5" />
               <circle cx="12" cy="12" r="4" />
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
             </svg>
-            @a_deeper_green
+            @leonie_staas
           </a>
         </div>
         <div>
