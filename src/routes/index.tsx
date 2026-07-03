@@ -504,11 +504,15 @@ function CompetencyBody({
       <ul
         className={
           "mt-4 space-y-2 text-sm text-foreground/80 " +
-          (align === "right" ? "md:[&_li]:flex-row-reverse md:[&_li]:text-right" : "")
+          (align === "center"
+            ? "mx-auto inline-block text-left"
+            : align === "right"
+            ? "md:[&_li]:flex-row-reverse md:[&_li]:text-right"
+            : "")
         }
       >
         {c.points.map((p) => (
-          <li key={p.text} className="flex items-start gap-2">
+          <li key={p.text} className="flex items-start gap-2 text-left">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             {p.href ? (
               <a href={p.href} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
