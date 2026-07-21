@@ -90,7 +90,7 @@ const MEDIA = [
   {
     outlet: "Entheogenic Renaissance · YouTube",
     title: "Conversation on the metacrisis and inner work.",
-    href: "https://www.youtube.com/results?search_query=Entheogenic+Renaissance+Leonie+Staas",
+    href: "https://www.youtube.com/watch?v=wPHoh6HlZK0&t=1s",
   },
   {
     outlet: "OPEN Foundation",
