@@ -237,7 +237,7 @@ function Home() {
           alt="Leonie Staas standing among juniper and sage in the high desert"
           width={1920}
           height={820}
-          className="absolute inset-0 h-full w-full object-cover object-[100%_42%] brightness-[1.35] saturate-[1.15] contrast-[0.96] md:object-right"
+          className="absolute inset-x-0 top-0 h-[calc(100%+14rem)] w-full -translate-y-56 object-cover object-[100%_50%] brightness-[1.35] saturate-[1.15] contrast-[0.96] md:inset-0 md:h-full md:translate-y-0 md:object-right"
         />
         <div className="absolute inset-0 bg-cream/15 mix-blend-screen" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/22 via-primary/5 to-transparent" aria-hidden />
